@@ -1,0 +1,49 @@
+page-noticias {
+
+    .noticias .card-content h3{
+        color: #030303;
+        font-size: 15px;
+        font-weight: bold;
+        margin-top: 15px;
+        max-width: 40ch;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+
+    .slidepatro{
+      background-color: green;
+      color: #fff;
+
+p{
+  font-size: 11px;
+}
+
+  img{
+    width: 100px;
+    border-style: solid;
+    border-radius: 100px;
+    border-width: 5px;
+    padding: 5px;
+
+  }
+
+}
+.imgwits{
+  z-index: 99999;
+}
+.titulonot{
+  color: green;
+  font-size: 14px;
+}
+
+.titcat{
+  text-align: center;
+  padding: 20px;
+}
+
+
+
+
+    }

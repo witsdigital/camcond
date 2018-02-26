@@ -1,0 +1,29 @@
+<ion-header>
+    <ion-navbar color="primary">
+      <ion-title>
+        Medicamentos
+      </ion-title>
+
+    </ion-navbar>
+  </ion-header>
+   
+  <ion-content>
+            <ion-item *ngFor="let p of event" (click)="openHorarios(p)">
+              Medicamento: {{p.medicamento}}<br>
+                Data de inicio: {{p.data_inicio | date:'dd-MM-yyyy' }}<br>
+                 Intervalo de uso: {{p.intervalo_uso}}
+                
+            </ion-item>
+  </ion-content>
+  <ion-footer>
+    <div class="add">
+    <ion-buttons end>
+      <button ion-button icon-only (click)="addEvent()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </div>
+  </ion-footer>
+
+
+

@@ -1,0 +1,135 @@
+page-perfil {
+    .content {
+        text-align: center;
+    }
+    .perfil {
+        background: url('../assets/bg_home.png')
+    }
+    .item{
+      //margin-left: 20px;
+      background: none;
+    }
+
+    .bloco1{
+
+      img {
+         width: 40%;
+
+         text-align: center;
+         margin: 0 auto;
+         height: 30%;
+         border-radius: 300px;
+
+         border-style: solid;
+            border-width: 5px;
+            border-color: #fff;
+
+                 margin-top: 10%;
+                 margin-bottom: 10%;
+
+     }
+
+  background: url('../assets/bgimgprofile.png')
+    }
+    .bloco1 h1 {
+        color: #fff;
+        font-size: 30px;
+    }
+
+    .email-perfil {
+        font-size: 13px;
+
+
+    }
+    .imgprofile{
+      width: 50%;
+    }
+
+    .email-endereco .icon{
+        font-size: 15px;
+        color: #0f00e8;
+        margin: 20px 0;
+    }
+
+    .imput {
+        width: 60%;
+        border-radius: 15px;
+        margin-bottom: 20px;
+    }
+
+    .bloco2 {
+      background: none;
+        margin-top: 10px;
+
+        text-align: center;
+
+
+
+
+    }
+    .iconoption{
+      position: absolute;
+      color: rgb(21, 102, 179);
+      font-size: 30px;
+      left: 85%;
+      top: 5%;
+    }
+    .totais{
+      margin-top: 5%;
+      margin-bottom: 5%;
+      height:100px;
+
+    }
+    .total1{
+      background-color: #03397c;
+        color: #fff;
+      p{
+        font-size: 15px;
+
+      }
+      span{
+
+
+          font-size: 25px;
+          font-weight: bold;
+
+
+      }
+    }
+    .total2{
+      background-color: #4d8c3f;
+        color: #fff;
+      p{
+        font-size: 15px;
+
+      }
+      span{
+          font-size: 25px;
+          font-weight: bold;
+
+      }
+    }
+    .iconssocial{
+      margin-top: 20px;
+      margin-bottom: 20px;
+      .icon{
+        font-size: 30px;
+        color: #4584d3;
+      }
+    }
+
+    .bloco2 .icon {
+        //margin-left: 15px;
+    }
+
+    .bloco2 {
+      .nome-perfil  {
+
+          color: rgb(32, 16, 105);
+          font-size: 30px;
+
+      }
+    }
+
+
+}

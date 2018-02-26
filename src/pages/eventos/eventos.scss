@@ -1,0 +1,51 @@
+page-eventos {
+
+
+
+
+
+.evento-titulo h2{
+    margin: 10px 5px 5px 5px;
+    font-weight: bold;
+}
+
+.evento-data {
+    color: #3010a7;
+    border-bottom: 0.2px solid #575151;
+    padding-bottom:25px;
+    font-size: 14px;
+}
+
+.evento-img img{
+    border-radius: 80px;
+    width: 10%;
+    height: 10%;
+    float: left;
+    margin: 8px;
+}
+.card-background-page {
+
+  ion-card {
+    position: relative;
+    text-align: center;
+  }
+
+  .card-title {
+    position: absolute;
+    top: 36%;
+    font-size: 2.0em;
+    width: 100%;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  .card-subtitle {
+    font-size: 1.0em;
+    position: absolute;
+    top: 82%;
+    width: 100%;
+    color: #fff;
+  }
+
+}
+}

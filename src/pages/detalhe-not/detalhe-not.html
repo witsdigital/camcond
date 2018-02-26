@@ -1,0 +1,54 @@
+<!--
+  Generated template for the DetalheNotPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>{{ct.titulo}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card>
+
+  <ion-item>
+    <ion-avatar item-start>
+      <img src="http://www.inebmed.com.br/{{ct.imgtumb}}">
+    </ion-avatar>
+    <h2 text-wrap>{{ct.titulo}}</h2>
+    <p>  {{ct.subtitulo}}</p>
+  </ion-item>
+
+  <img src="http://www.inebmed.com.br/{{ct.imgtumb}}">
+
+  <ion-card-content>
+  <div style="text-align: justify;" [innerHTML]="ct.conteudo"></div>
+  </ion-card-content>
+
+  <ion-row>
+    <ion-col>
+      <button ion-button icon-left clear small>
+        <ion-icon name="thumbs-up"></ion-icon>
+        <div>12 Likes</div>
+      </button>
+    </ion-col>
+    <ion-col>
+      <button ion-button icon-left clear small>
+        <ion-icon name="share"></ion-icon>
+        <div>Compartilhar</div>
+      </button>
+    </ion-col>
+    <ion-col center text-center>
+      <ion-note>
+  {{ct.data}}
+      </ion-note>
+    </ion-col>
+  </ion-row>
+
+</ion-card>
+</ion-content>

@@ -1,0 +1,60 @@
+<ion-header>
+    <ion-navbar color="primary">
+      <ion-buttons start>
+        <button ion-button icon-only (click)="cancel()">
+          <ion-icon name="close"></ion-icon>
+        </button>
+      </ion-buttons>
+      <ion-title>Agendar</ion-title>
+    </ion-navbar>
+  </ion-header>
+   
+  <ion-content>
+    <ion-list>
+      <ion-item>
+          <ion-label>Medicamento:</ion-label><br>
+        <ion-input type="text" placeholder="" [(ngModel)]="event.med"></ion-input>
+      </ion-item>
+
+      <br>
+      <ion-item>
+        <ion-label>Horario inicial:</ion-label><br>
+        <ion-datetime cancelText="Voltar" doneText="Ok" displayFormat="HH:mm:ss" pickerFormat="HH:mm:ss" [(ngModel)]="event.horario_inicio"></ion-datetime>
+      </ion-item>
+
+      <br>
+      <ion-item>
+          <ion-label>Intervalo entre o uso:</ion-label><br>
+          <ion-select placeholder="Intervalo entre o uso:" [(ngModel)]="event.intervalo_uso">
+              <ion-option value="01:00:00">01 hora</ion-option>
+              <ion-option value="02:00:00">02 horas</ion-option>
+              <ion-option value="03:00:00">03 horas</ion-option>
+              <ion-option value="04:00:00">04 horas</ion-option>
+              <ion-option value="05:00:00">05 horas</ion-option>
+              <ion-option value="06:00:00">06 horas</ion-option>
+              <ion-option value="07:00:00">07 horas</ion-option>
+              <ion-option value="08:00:00">08 horas</ion-option>
+              <ion-option value="09:00:00">09 horas</ion-option>
+              <ion-option value="10:00:00">10 horas</ion-option>
+              <ion-option value="11:00:00">11 horas</ion-option>
+              <ion-option value="12:00:00">12 horas</ion-option>
+            </ion-select>
+      </ion-item>
+
+        <br>
+      <ion-item>
+        <ion-label>Data de inicio:</ion-label><br>
+        <ion-datetime cancelText="Voltar" doneText="Ok" displayFormat="DD/MM/YYYY" pickerFormat="DD/MMM/YYYY" [(ngModel)]="event.data_inicio" [min]="minDate"></ion-datetime>
+      </ion-item>
+      <br>
+      <ion-item>
+        <ion-label>Duração em dias:</ion-label><br>
+        <ion-input type="tel" placeholder="" [(ngModel)]="event.duracao"></ion-input>
+      </ion-item>
+
+    </ion-list>
+    <br>
+    <button ion-button full icon-left [disabled]="!event.med ||!event.horario_inicio ||!event.data_inicio ||!event.intervalo_uso ||!event.duracao " (click)="save()">
+      <ion-icon name="checkmark"></ion-icon> Adicionar
+    </button>
+  </ion-content>

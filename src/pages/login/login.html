@@ -1,0 +1,21 @@
+
+
+
+<ion-content class="login" >
+  <ion-icon (click)="close()"  class="closeicons" name="close-circle"></ion-icon>
+    <div align="center" class="">
+        <img class="logologin" src="assets/menu/logo2.png" alt="">
+      </div>
+
+
+  <div align="center" class="boxinput">
+    <ion-input class="imput" type="text" [(ngModel)]="userData.login" placeholder="Login" name="login"  required></ion-input>
+    <ion-input class="imput" type="password" [(ngModel)]="userData.senha" placeholder="Senha" name="senha"  required></ion-input>
+  <button class="entrar" (click)="lg(userData)" ion-button color="secundary" [disabled]="!userData.login ||!userData.senha" >ENTRAR</button>
+  </div>
+
+
+
+
+
+</ion-content>

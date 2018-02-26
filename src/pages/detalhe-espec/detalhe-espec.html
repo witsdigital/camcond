@@ -1,0 +1,44 @@
+<!--
+  Generated template for the DetalheEspecPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Especialista</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+<div align="center" class="blocoimg">
+    <img class="imgespec" src="http://www.inebmed.com.br/{{ct.img}}"/>
+</div>
+<div align="center" class="detalhe">
+  <div class="nome-perfil" > {{ct.nome}}</div>
+  <div class="email-perfil" >  {{ct.especialidade}}</div>
+
+</div>
+
+<ion-row class="iconsaction">
+  <ion-col>
+      <a href="tel:{{ct.telefone}}" target="_self"> <img class="imgespec" src="assets/telephone.png"/></a>
+
+
+  </ion-col>
+  <ion-col>
+      <a href="mailto:{{ct.email}}" target="_self"> <img class="imgespec" src="assets/sendmail.png"/></a>
+
+  </ion-col>
+  <ion-col>
+  <img class="imgespec" src="assets/map.png"/>
+  </ion-col>
+
+</ion-row>
+
+
+</ion-content>

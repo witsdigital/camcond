@@ -1,0 +1,50 @@
+
+
+
+<ion-menu [content]="mycontent" id="menu2" >
+    <ion-content class="menu">
+        <div *ngIf="user"  class="boxmenu">
+            <img src="http://www.inebmed.com.br/{{dadosUser.imgtumb}}">
+            <h3>{{dadosUser.nome}}</h3>
+            <h4>{{dadosUser.email}}</h4>
+        </div>
+        <ion-list no-lines>
+            <button ion-item class="item-menu" *ngFor="let p of perfil" (click)="openPages(p)" menuClose>
+                    <ion-icon name="home"> {{p.title}}</ion-icon>
+            </button>
+            <button ion-item class="item-menu" *ngFor="let p of home" (click)="openPages(p)" menuClose>
+               <ion-icon name="home"> {{p.title}}</ion-icon>
+            </button>
+            <button ion-item  class="item-menu" *ngFor="let p of noticias" (click)="openPagesPush(p)" menuClose>
+                    <ion-icon name="information-circle"> {{p.title}} </ion-icon>
+            </button>
+            <button ion-item class="item-menu" *ngFor="let p of especialistas" (click)="openPagesPush(p)" menuClose>
+                    <ion-icon name="contact"> {{p.title}}</ion-icon>
+            </button>
+            <button ion-item class="item-menu" *ngFor="let p of unidades" (click)="openPagesPush(p)" menuClose>
+                <ion-icon name="briefcase"> {{p.title}}</ion-icon>
+            </button>
+            <button ion-item class="item-menu" *ngFor="let p of saude" (click)="openPagesPush(p)" menuClose>
+                    <ion-icon name="medkit"> {{p.title}}</ion-icon>
+            </button>
+            <button ion-item class="item-menu" *ngFor="let p of convenios" (click)="openPagesPush(p)" menuClose>
+                <ion-icon name="contacts"> {{p.title}}</ion-icon>
+            </button>
+            <button *ngIf="user" ion-item class="item-menu" (click)="sair()" menuClose>
+                <ion-icon name="close"> Sair</ion-icon>
+            </button>
+            <div class="" *ngIf="!user">
+
+              <button  ion-item class="item-menu" *ngFor="let p of login" (click)="openPagesPush(p)" menuClose>
+                  <ion-icon name="lock"> {{p.title}}</ion-icon>
+              </button>
+            </div>
+
+            <ion-item>Feedback</ion-item>
+
+        </ion-list>
+    </ion-content>
+</ion-menu>
+
+
+<ion-nav #mycontent [root]="rootPage"></ion-nav>

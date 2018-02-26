@@ -1,0 +1,84 @@
+
+
+page-login {
+  .closeicons{
+    position: absolute;
+   top: 5%;
+   left: 80%;
+   color: #6ea70a;
+    font-size: 40px;
+  }
+    .boxinput{
+      margin-top: 20px;
+
+    }
+
+      .entrar{
+        width: 80%;
+      }
+      video {
+        background-color: blue;
+     position: fixed;
+     opacity: 0.4;
+     top: 50%;
+     left: -10%;
+     min-width: 100%;
+     min-height: 100%;
+     width: auto;
+     height: auto;
+     z-index: -100;
+     transform: translateX(-50%) translateY(-50%);
+ }
+    .imput{
+
+      text-align: center;
+      background-color: #f1eded;
+      border-radius: 10px !important;
+      padding-left: 30px !important;
+      font-size: 1.2em;
+      margin-bottom: 20px;
+      border: 1px solid #e0dddd;
+      border-bottom: 0px !important;
+      box-shadow: none !important;
+      width: 80%;
+
+    }
+    .toolsbox{
+      background-color: #fff;
+    }
+
+
+    .logologin{
+      margin: 100px 20px 20px 20px;
+      width: 80%;
+
+      padding: 10px;
+
+      border-radius: 10px;
+
+    }
+
+    .toast{
+      background-color: red;
+       text-align:center;
+    }
+
+
+        .login{
+    background-image: url('../assets/bglogin.png');
+
+
+        }
+
+
+  }
+  .toast-error {
+  > div{
+       background-color:#ff0000!important;
+   }
+  }
+  .toast-success {
+  > div{
+       background-color:#6ea70a!important;
+   }
+  }

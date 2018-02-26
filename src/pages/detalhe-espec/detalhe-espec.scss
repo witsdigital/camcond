@@ -1,0 +1,54 @@
+page-detalhe-espec {
+  .blocoimg{
+  background: url('../assets/bgespecprofile.png');
+    img {
+      width: 60%;
+
+      text-align: center;
+      margin: 0 auto;
+      height: 30%;
+      border-radius: 300px;
+
+      border-style: solid;
+      border-width: 5px;
+      border-color: #fff;
+
+      margin-top: 10%;
+      margin-bottom: 10%;
+
+    }
+  }
+  .detalhe{
+    margin-top: 10px;
+    p{
+      font-size: 30px;
+    }
+    span{
+
+      font-size: 15px;
+
+    }
+  }
+  .nome-perfil{
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .iconsaction{
+    padding: 20px;
+
+.col{
+      padding: 15px;
+}
+  }
+  .iconssocial{
+    text-align: center;
+    margin-bottom: 10px;
+    .icon{
+      font-size: 30px;
+      color: #4584d3;
+    }
+  }
+
+
+
+}

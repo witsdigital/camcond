@@ -1,0 +1,58 @@
+.menu {
+    background: #2d9704;
+}
+
+
+.item-menu {
+   background: none;
+ 
+}
+
+.item-menu .icon {
+    font-size: 20px;
+
+    color: #fff;
+}
+
+
+ion-app.md [padding] .scroll-content {
+    padding: 0px;
+}
+ion-app.ios [padding] .scroll-content {
+    padding: 0px;
+}
+
+ion-app.wp [padding] .scroll-content {
+    padding: 0px;
+}
+
+.boxmenu{
+    h3{
+        font-size: 20px;
+        text-align: center;
+        color: #fff;
+    }
+    h4{
+        margin-top: -10px;
+        font-size: 12px;
+        text-align: center;
+            color: #fff;
+
+    }
+     img {
+         width: 40%;
+
+         text-align: center;
+         margin: 0px 10px 10px 30%;
+         height: 30%;
+         border-radius: 300px;
+
+         border-style: solid;
+            border-width: 5px;
+            border-color: #fff;
+
+                 margin-top: 10%;
+                 margin-bottom: 10%;
+
+     }
+}

@@ -1,0 +1,25 @@
+<!--
+  Generated template for the CalImcPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Calcular IMC</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div class="conteudo">
+        <ion-item><ion-input class="imput" [(ngModel)]="dados.peso" type="tel" placeholder="Peso (Exemplo: 70.5)" required=""></ion-input></ion-item>
+        <ion-item><ion-input class="imput" [(ngModel)]="dados.altura" type="number" placeholder="Altura (Exemplo: 1.82)" name="altura"  required=""></ion-input></ion-item>
+
+      <button class="entrar" (click)="calcular(dados)" ion-button color="secundary" [disabled]="!dados.peso ||!dados.altura" >Calcular</button>
+
+      </div>
+
+</ion-content>
