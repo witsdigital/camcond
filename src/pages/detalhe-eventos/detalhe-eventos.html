@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar color="primary">
+  <ion-navbar color="danger">
     <ion-title >Evento</ion-title>
   </ion-navbar>
 
@@ -16,7 +16,7 @@
 <ion-content padding>
   <div *ngFor="let img of evento">
 
-      <img class="detalhe-evento" src="{{img.src}}" imageViewer>
+      <img class="detalhe-evento" src="http://camaradecondeuba.ba.gov.br/uploads/galeria/{{img.arquivo}}" imageViewer>
 
   </div>
 </ion-content>

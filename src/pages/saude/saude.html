@@ -6,18 +6,16 @@
 -->
 <ion-header>
 
-  <ion-navbar color="primary">
-    <ion-title>+Saude</ion-title>
+  <ion-navbar color="danger">
+    <ion-title>TV CAMARA</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-  <ion-list>
-    <button ion-item (click)="imc()"> <ion-icon name="construct"> Calculo IMC</ion-icon></button>
-    <div *ngIf="user2" class="">
-     </div>
+  <div *ngFor="let item of videos">
+      {{item.link_video}}
+  </div>
    
-  </ion-list>
 </ion-content>

@@ -11,7 +11,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class ServiceProvider {
 
-api:string = 'http://www.meupainel.com.br/ted2/';
+api:string = 'http://camaradecondeuba.ba.gov.br/';
 
   constructor(public http: Http) {
 
@@ -22,9 +22,27 @@ api:string = 'http://www.meupainel.com.br/ted2/';
     return this.http.get(this.api+'noticia/getappdicas').map(res=> res.json())
   }
   
+  
   getNoticias(){
-	  return this.http.get(this.api+'noticia/getappnews/').map(res=> res.json())
+	  return this.http.get(this.api+'noticia/getall/').map(res=> res.json())
   }
+
+  getGaleria(){
+	  return this.http.get(this.api+'galeria/getapp/').map(res=> res.json())
+  }
+
+  getTvCamara(){
+	  return this.http.get(this.api+'tv_camara/getapp/').map(res=> res.json())
+  }
+
+  getVereadores(){
+	  return this.http.get(this.api+'vereadores/getVereadoresApp/').map(res=> res.json())
+  }
+
+  getPublicacao(){
+	  return this.http.get(this.api+'publicacoes/getPublicacaoApp/').map(res=> res.json())
+  }
+
 
   getEspecialistas () {
     return this.http.get(this.api+'especialista/getapp/').map(res=> res.json())
@@ -49,7 +67,7 @@ api:string = 'http://www.meupainel.com.br/ted2/';
   }
 
   getEventoImg(key) {
-    return this.http.get(this.api+'eventos/getappimg/'+key).map(res=> res.json())
+    return this.http.get(this.api+'galeria/getappimg/'+key).map(res=> res.json())
   }
 
   postDatas(credentials, type) {

@@ -6,8 +6,8 @@
 -->
 <ion-header>
 
-  <ion-navbar color="primary">
-    <ion-title>Perfil</ion-title>
+  <ion-navbar color="danger">
+    <ion-title>Vereadores</ion-title>
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -16,40 +16,19 @@
 </ion-header>
 
 
-<ion-content class="perfil">
-  <ion-icon class="iconoption" name="options"></ion-icon>
 
-    <div class="bloco1">
-      <img src="http://www.inebmed.com.br/{{dadosUser.imgtumb}}">
-
-  </div>
-  <div class="bloco2">
-  <div class="nome-perfil" >{{dadosUser.nome}}</div>
-  <div class="email-perfil" >   {{dadosUser.email}}</div>
-<ion-item-group>
-  <ion-item-divider color="light">Dados Pessoais</ion-item-divider>
-  <ion-item><b>Endereço: </b> {{dadosUser.endereco}}</ion-item>
-  <ion-item><b>Cidade: </b> {{dadosUser.cidade}}</ion-item>
-  <ion-item><b>Rg: </b> {{dadosUser.rg}}</ion-item>
-  <ion-item><b>Cpf: </b> {{dadosUser.cpf}}</ion-item>
-  <ion-item><b>Data Nasc.: </b> {{dadosUser.datanasci}}</ion-item>
-</ion-item-group>
-<ion-row class="iconssocial">
-  <ion-col>
-      <ion-icon name="logo-facebook"></ion-icon>
-  </ion-col>
-  <ion-col>
-      <ion-icon name="logo-instagram"></ion-icon>
-  </ion-col>
-  <ion-col>
-      <ion-icon name="share"></ion-icon>
-  </ion-col>
-  <ion-col>
-      <ion-icon name="star"></ion-icon>
-  </ion-col>
-</ion-row>
-
-  <button class="imput" ion-button (click)="sair()">Sair</button>
-  </div>
-
-</ion-content>
+<ion-content >
+    <div *ngFor="let item of vereadores" (click)="openPage(item)">
+      <ion-card>
+    
+        <ion-item>
+          <ion-avatar item-start>
+              <img src="http://camaradecondeuba.ba.gov.br/uploads/funcionarios/7/{{item.img}}">
+          </ion-avatar>
+          <h2> {{item.nome}}</h2>
+          <p> {{item.cargo}}</p>
+        </ion-item>
+    
+      </ion-card>
+      </div>
+    </ion-content>
