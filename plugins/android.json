@@ -1,0 +1,49 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "ionic-plugin-keyboard": {
+      "PACKAGE_NAME": "xdk.ineb"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "xdk.ineb"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "xdk.ineb"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "xdk.ineb"
+    },
+    "cordova-plugin-ionic-webview": {
+      "PACKAGE_NAME": "xdk.ineb"
+    },
+    "cordova-plugin-geolocation": {
+      "PACKAGE_NAME": "xdk.ineb"
+    },
+    "cordova-plugin-calendar": {
+      "PACKAGE_NAME": "xdk.ineb"
+    },
+    "cordova-plugin-document-viewer": {
+      "PACKAGE_NAME": "xdk.ineb"
+    },
+    "cordova-plugin-x-socialsharing": {
+      "PACKAGE_NAME": "xdk.ineb"
+    },
+    "cordova-plugin-network-information": {
+      "PACKAGE_NAME": "xdk.ineb"
+    },
+    "cordova-plugin-app-version": {
+      "PACKAGE_NAME": "xdk.ineb"
+    }
+  },
+  "dependent_plugins": {
+    "es6-promise-plugin": {
+      "PACKAGE_NAME": "xdk.ineb"
+    }
+  }
+}
