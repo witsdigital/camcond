@@ -41,8 +41,13 @@
         </ion-thumbnail>
         <h2>Notícias</h2>
       </ion-item>
-      <ion-item *ngFor="let item of dados | slice:0:10">
+      <ion-item *ngFor="let item of dados | slice:0:10" (click)="openPage(item)">
         {{item.titulo}}
+      </ion-item>
+      <ion-item *ngFor="let p of noticias">
+        <ion-buttons>
+          <div (click)="openPages(p)">Ver todas</div>
+        </ion-buttons>
       </ion-item>
     </ion-list>
 

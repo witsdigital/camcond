@@ -1930,20 +1930,21 @@ MyApp = __decorate([
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__providers_service_service__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__get_unidades_get_unidades__ = __webpack_require__(67);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__exame_exame__ = __webpack_require__(137);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__login_login__ = __webpack_require__(69);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__eventos_eventos__ = __webpack_require__(134);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__dicas_dicas__ = __webpack_require__(131);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__perfil_perfil__ = __webpack_require__(70);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__noticias_noticias__ = __webpack_require__(71);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__especialistas_especialistas__ = __webpack_require__(66);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__saude_saude__ = __webpack_require__(72);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__exame_list_exame_list__ = __webpack_require__(135);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_network__ = __webpack_require__(197);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__detalhe_not_detalhe_not__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_service_service__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__get_unidades_get_unidades__ = __webpack_require__(67);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__exame_exame__ = __webpack_require__(137);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__login_login__ = __webpack_require__(69);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__eventos_eventos__ = __webpack_require__(134);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__dicas_dicas__ = __webpack_require__(131);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__perfil_perfil__ = __webpack_require__(70);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__noticias_noticias__ = __webpack_require__(71);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__especialistas_especialistas__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__saude_saude__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__exame_list_exame_list__ = __webpack_require__(135);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_ionic_angular__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ionic_native_network__ = __webpack_require__(197);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1953,6 +1954,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -1981,34 +1983,34 @@ var HomePage = (function () {
         console.log(this.dados);
         this.menu = 'ferramentas';
         this.perfil = [
-            { title: "Perfil", component: __WEBPACK_IMPORTED_MODULE_6__perfil_perfil__["a" /* PerfilPage */] }
+            { title: "Perfil", component: __WEBPACK_IMPORTED_MODULE_7__perfil_perfil__["a" /* PerfilPage */] }
         ];
         this.unidades = [
-            { title: "Unidades", component: __WEBPACK_IMPORTED_MODULE_1__get_unidades_get_unidades__["a" /* GetUnidadesPage */] }
+            { title: "Unidades", component: __WEBPACK_IMPORTED_MODULE_2__get_unidades_get_unidades__["a" /* GetUnidadesPage */] }
         ];
         this.dicas = [
-            { title: "Dicas", component: __WEBPACK_IMPORTED_MODULE_5__dicas_dicas__["a" /* DicasPage */] }
+            { title: "Dicas", component: __WEBPACK_IMPORTED_MODULE_6__dicas_dicas__["a" /* DicasPage */] }
         ];
         this.noticias = [
-            { title: "noticias", component: __WEBPACK_IMPORTED_MODULE_7__noticias_noticias__["a" /* NoticiasPage */] }
+            { title: "noticias", component: __WEBPACK_IMPORTED_MODULE_8__noticias_noticias__["a" /* NoticiasPage */] }
         ];
         this.eventos = [
-            { title: "Eventos", component: __WEBPACK_IMPORTED_MODULE_4__eventos_eventos__["a" /* EventosPage */] }
+            { title: "Eventos", component: __WEBPACK_IMPORTED_MODULE_5__eventos_eventos__["a" /* EventosPage */] }
         ];
         this.saude = [
-            { title: "Saude", component: __WEBPACK_IMPORTED_MODULE_9__saude_saude__["a" /* SaudePage */] }
+            { title: "Saude", component: __WEBPACK_IMPORTED_MODULE_10__saude_saude__["a" /* SaudePage */] }
         ];
         this.especialistas = [
-            { title: "Especialistas", component: __WEBPACK_IMPORTED_MODULE_8__especialistas_especialistas__["a" /* EspecialistasPage */] }
+            { title: "Especialistas", component: __WEBPACK_IMPORTED_MODULE_9__especialistas_especialistas__["a" /* EspecialistasPage */] }
         ];
         this.login = [
-            { title: "Login", component: __WEBPACK_IMPORTED_MODULE_3__login_login__["a" /* LoginPage */] }
+            { title: "Login", component: __WEBPACK_IMPORTED_MODULE_4__login_login__["a" /* LoginPage */] }
         ];
         this.exame = [
-            { title: "Exame", component: __WEBPACK_IMPORTED_MODULE_2__exame_exame__["a" /* ExamePage */] }
+            { title: "Exame", component: __WEBPACK_IMPORTED_MODULE_3__exame_exame__["a" /* ExamePage */] }
         ];
         this.exameList = [
-            { title: "Exames", component: __WEBPACK_IMPORTED_MODULE_10__exame_list_exame_list__["a" /* ExameListPage */] }
+            { title: "Exames", component: __WEBPACK_IMPORTED_MODULE_11__exame_list_exame_list__["a" /* ExameListPage */] }
         ];
         this.network.onDisconnect().subscribe(function () {
             var toast = _this.toastCtrl.create({
@@ -2050,8 +2052,13 @@ var HomePage = (function () {
         this.menuCtrl.enable(true, 'menu1');
         this.menuCtrl.open();
     };
+    HomePage.prototype.openPage = function (item) {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_0__detalhe_not_detalhe_not__["a" /* DetalheNotPage */], {
+            ct: item
+        });
+    };
     HomePage.prototype.openlogin = function () {
-        var modal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_3__login_login__["a" /* LoginPage */]);
+        var modal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_4__login_login__["a" /* LoginPage */]);
         modal.onDidDismiss(function (data) {
         });
         modal.present();
@@ -2062,12 +2069,13 @@ var HomePage = (function () {
     return HomePage;
 }());
 HomePage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_11__angular_core__["Component"])({
-        selector: 'page-home',template:/*ion-inline-start:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\home\home.html"*/'<ion-header>\n\n  <ion-toolbar color="danger">\n\n    <img width="100%" src="assets/menu/logo.png" alt="">\n\n\n\n\n\n  </ion-toolbar>\n\n</ion-header>\n\n\n\n<ion-content class="home">\n\n\n\n\n\n  <div class="slide">\n\n      <ion-slides *ngIf="dados && dados.length" autoplay="5000" class="slideroption" pager="true"   loop="true" speed="300">\n\n\n\n     <div *ngFor="let item of dados | slice:0:1"> \n\n      <ion-slide>\n\n          <img src="http://camaradecondeuba.ba.gov.br/uploads/destaque.png" alt="">\n\n      </ion-slide>\n\n    </div>\n\n\n\n    </ion-slides>\n\n\n\n  </div>\n\n\n\n  <div padding>\n\n    <ion-segment color="danger" [(ngModel)]="menu">\n\n      <ion-segment-button value="ferramentas">\n\n        Utilidades\n\n      </ion-segment-button>\n\n      <ion-segment-button value="news">\n\n        Notícias\n\n      </ion-segment-button>\n\n    </ion-segment>\n\n  </div>\n\n\n\n  <div [ngSwitch]="menu">\n\n    <ion-list *ngSwitchCase="\'news\'">\n\n      <ion-item>\n\n        <ion-thumbnail item-start>\n\n          <img src="img/thumbnail-puppy-1.jpg">\n\n        </ion-thumbnail>\n\n        <h2>Notícias</h2>\n\n      </ion-item>\n\n      <ion-item *ngFor="let item of dados | slice:0:10">\n\n        {{item.titulo}}\n\n      </ion-item>\n\n    </ion-list>\n\n\n\n    <ion-list class="boxicons" *ngSwitchCase="\'ferramentas\'">\n\n      <ion-row class="menuicones">\n\n        <ion-col col-4>\n\n          <div *ngFor="let p of perfil" class="">\n\n            <img (click)="openPages(p)" src="assets/menu/user.png" alt="">\n\n          </div>\n\n        </ion-col>\n\n        <ion-col col-4>\n\n          <div *ngFor="let p of perfil" class="">\n\n            <img (click)="openPages(p)" src="assets/menu/vereadores.png" alt="">\n\n          </div>\n\n        </ion-col>\n\n        <ion-col col-4>\n\n          <div *ngFor="let p of perfil" class="">\n\n            <img (click)="openPages(p)" src="assets/menu/ouvidoria.png" alt="">\n\n          </div>\n\n        </ion-col>\n\n      </ion-row>\n\n      <ion-row class="menuicones">\n\n        <ion-col col-4>\n\n          <div *ngFor="let p of perfil" class="">\n\n            <img (click)="openPages(p)" src="assets/menu/transparencia.png" alt="">\n\n          </div>\n\n        </ion-col>\n\n        <ion-col col-4>\n\n          <div *ngFor="let p of saude" class="">\n\n            <img (click)="openPages(p)" src="assets/menu/transmissoes.png" alt="">\n\n          </div>\n\n        </ion-col>\n\n        <ion-col col-4>\n\n          <div *ngFor="let p of eventos" class="">\n\n            <img (click)="openPages(p)" src="assets/menu/galerias.png" alt="">\n\n          </div>\n\n        </ion-col>\n\n      </ion-row>\n\n\n\n\n\n    </ion-list>\n\n  </div>\n\n\n\n\n\n\n\n\n\n\n\n</ion-content>\n\n<ion-footer>\n\n  <img class="imgwits" src="assets/logow.png" />\n\n</ion-footer>'/*ion-inline-end:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\home\home.html"*/
+    Object(__WEBPACK_IMPORTED_MODULE_12__angular_core__["Component"])({
+        selector: 'page-home',template:/*ion-inline-start:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\home\home.html"*/'<ion-header>\n\n  <ion-toolbar color="danger">\n\n    <img width="100%" src="assets/menu/logo.png" alt="">\n\n\n\n\n\n  </ion-toolbar>\n\n</ion-header>\n\n\n\n<ion-content class="home">\n\n\n\n\n\n  <div class="slide">\n\n      <ion-slides *ngIf="dados && dados.length" autoplay="5000" class="slideroption" pager="true"   loop="true" speed="300">\n\n\n\n     <div *ngFor="let item of dados | slice:0:1"> \n\n      <ion-slide>\n\n          <img src="http://camaradecondeuba.ba.gov.br/uploads/destaque.png" alt="">\n\n      </ion-slide>\n\n    </div>\n\n\n\n    </ion-slides>\n\n\n\n  </div>\n\n\n\n  <div padding>\n\n    <ion-segment color="danger" [(ngModel)]="menu">\n\n      <ion-segment-button value="ferramentas">\n\n        Utilidades\n\n      </ion-segment-button>\n\n      <ion-segment-button value="news">\n\n        Notícias\n\n      </ion-segment-button>\n\n    </ion-segment>\n\n  </div>\n\n\n\n  <div [ngSwitch]="menu">\n\n    <ion-list *ngSwitchCase="\'news\'">\n\n      <ion-item>\n\n        <ion-thumbnail item-start>\n\n          <img src="img/thumbnail-puppy-1.jpg">\n\n        </ion-thumbnail>\n\n        <h2>Notícias</h2>\n\n      </ion-item>\n\n      <ion-item *ngFor="let item of dados | slice:0:10" (click)="openPage(item)">\n\n        {{item.titulo}}\n\n      </ion-item>\n\n      <ion-item *ngFor="let p of noticias">\n\n        <ion-buttons>\n\n          <div (click)="openPages(p)">Ver todas</div>\n\n        </ion-buttons>\n\n      </ion-item>\n\n    </ion-list>\n\n\n\n    <ion-list class="boxicons" *ngSwitchCase="\'ferramentas\'">\n\n      <ion-row class="menuicones">\n\n        <ion-col col-4>\n\n          <div *ngFor="let p of perfil" class="">\n\n            <img (click)="openPages(p)" src="assets/menu/user.png" alt="">\n\n          </div>\n\n        </ion-col>\n\n        <ion-col col-4>\n\n          <div *ngFor="let p of perfil" class="">\n\n            <img (click)="openPages(p)" src="assets/menu/vereadores.png" alt="">\n\n          </div>\n\n        </ion-col>\n\n        <ion-col col-4>\n\n          <div *ngFor="let p of perfil" class="">\n\n            <img (click)="openPages(p)" src="assets/menu/ouvidoria.png" alt="">\n\n          </div>\n\n        </ion-col>\n\n      </ion-row>\n\n      <ion-row class="menuicones">\n\n        <ion-col col-4>\n\n          <div *ngFor="let p of perfil" class="">\n\n            <img (click)="openPages(p)" src="assets/menu/transparencia.png" alt="">\n\n          </div>\n\n        </ion-col>\n\n        <ion-col col-4>\n\n          <div *ngFor="let p of saude" class="">\n\n            <img (click)="openPages(p)" src="assets/menu/transmissoes.png" alt="">\n\n          </div>\n\n        </ion-col>\n\n        <ion-col col-4>\n\n          <div *ngFor="let p of eventos" class="">\n\n            <img (click)="openPages(p)" src="assets/menu/galerias.png" alt="">\n\n          </div>\n\n        </ion-col>\n\n      </ion-row>\n\n\n\n\n\n    </ion-list>\n\n  </div>\n\n\n\n\n\n\n\n\n\n\n\n</ion-content>\n\n<ion-footer>\n\n  <img class="imgwits" src="assets/logow.png" />\n\n</ion-footer>'/*ion-inline-end:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\home\home.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__providers_service_service__["a" /* ServiceProvider */], __WEBPACK_IMPORTED_MODULE_12_ionic_angular__["p" /* ModalController */], __WEBPACK_IMPORTED_MODULE_12_ionic_angular__["w" /* ToastController */], __WEBPACK_IMPORTED_MODULE_13__ionic_native_network__["a" /* Network */], __WEBPACK_IMPORTED_MODULE_12_ionic_angular__["r" /* NavController */], __WEBPACK_IMPORTED_MODULE_12_ionic_angular__["o" /* MenuController */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__providers_service_service__["a" /* ServiceProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__providers_service_service__["a" /* ServiceProvider */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_13_ionic_angular__["p" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_13_ionic_angular__["p" /* ModalController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_13_ionic_angular__["w" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_13_ionic_angular__["w" /* ToastController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_14__ionic_native_network__["a" /* Network */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_14__ionic_native_network__["a" /* Network */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_13_ionic_angular__["r" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_13_ionic_angular__["r" /* NavController */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_13_ionic_angular__["o" /* MenuController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_13_ionic_angular__["o" /* MenuController */]) === "function" && _f || Object])
 ], HomePage);
 
+var _a, _b, _c, _d, _e, _f;
 //# sourceMappingURL=home.js.map
 
 /***/ }),
@@ -2167,7 +2175,7 @@ var DetalheNotPage = (function () {
 }());
 DetalheNotPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'page-detalhe-not',template:/*ion-inline-start:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\detalhe-not\detalhe-not.html"*/'<!--\n\n  Generated template for the DetalheNotPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar color="primary">\n\n    <ion-title>{{ct.titulo}}</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <ion-card>\n\n\n\n  <ion-item>\n\n    <ion-avatar item-start>\n\n      <img src="http://www.inebmed.com.br/{{ct.imgtumb}}">\n\n    </ion-avatar>\n\n    <h2 text-wrap>{{ct.titulo}}</h2>\n\n    <p>  {{ct.subtitulo}}</p>\n\n  </ion-item>\n\n\n\n  <img src="http://www.inebmed.com.br/{{ct.imgtumb}}">\n\n\n\n  <ion-card-content>\n\n  <div style="text-align: justify;" [innerHTML]="ct.conteudo"></div>\n\n  </ion-card-content>\n\n\n\n  <ion-row>\n\n    <ion-col>\n\n      <button ion-button icon-left clear small>\n\n        <ion-icon name="thumbs-up"></ion-icon>\n\n        <div>12 Likes</div>\n\n      </button>\n\n    </ion-col>\n\n    <ion-col>\n\n      <button ion-button icon-left clear small>\n\n        <ion-icon name="share"></ion-icon>\n\n        <div>Compartilhar</div>\n\n      </button>\n\n    </ion-col>\n\n    <ion-col center text-center>\n\n      <ion-note>\n\n  {{ct.data}}\n\n      </ion-note>\n\n    </ion-col>\n\n  </ion-row>\n\n\n\n</ion-card>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\detalhe-not\detalhe-not.html"*/,
+        selector: 'page-detalhe-not',template:/*ion-inline-start:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\detalhe-not\detalhe-not.html"*/'<!--\n\n  Generated template for the DetalheNotPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar color="danger">\n\n    <ion-title>{{ct.titulo}}</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <ion-card>\n\n\n\n  <ion-item>\n\n    <ion-avatar item-start>\n\n      <img src="http://camaradecondeuba.ba.gov.br/uploads/noticias/7/{{ct.img}}">\n\n    </ion-avatar>\n\n    <h2 text-wrap>{{ct.titulo}}</h2>\n\n    <p>  {{ct.subtitulo}}</p>\n\n  </ion-item>\n\n\n\n  <img src="http://camaradecondeuba.ba.gov.br/uploads/noticias/7/{{ct.img}}">\n\n\n\n  <ion-card-content>\n\n  <div style="text-align: justify;" [innerHTML]="ct.conteudo"></div>\n\n  </ion-card-content>\n\n\n\n  <ion-row>\n\n    <ion-col>\n\n      <button ion-button icon-left clear small>\n\n        <ion-icon name="share"></ion-icon>\n\n        <div>Compartilhar</div>\n\n      </button>\n\n    </ion-col>\n\n    <ion-col center text-center>\n\n      <ion-note>\n\n  {{ct.data}}\n\n      </ion-note>\n\n    </ion-col>\n\n  </ion-row>\n\n\n\n</ion-card>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\detalhe-not\detalhe-not.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["r" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* NavParams */]])
 ], DetalheNotPage);
@@ -2667,7 +2675,7 @@ var NoticiasPage = (function () {
 }());
 NoticiasPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
-        selector: 'page-noticias',template:/*ion-inline-start:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\noticias\noticias.html"*/'<!--\n\n  Generated template for the NoticiasPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n        <ion-navbar color="primary">\n\n            <ion-title>Notícias</ion-title>\n\n          </ion-navbar>\n\n    </ion-header>\n\n\n\n\n\n\n\n\n\n<ion-content  class="home">\n\n<div class="" *ngIf="noticias && noticias.length">\n\n\n\n\n\n\n\n  <div class="slidepatro">\n\n    <div class="titcat">\n\n      Destaques\n\n    </div>\n\n\n\n<ion-slides *ngIf="noticias && noticias.length" padding paginationType autoplay="3000" loop slidesPerView="3">\n\n<ion-slide (click)="openPage(dest)"  *ngFor="let dest of noticias | slice:0:5; let i=index"  >\n\n            <img src="http://www.inebmed.com.br/{{dest.imgtumb}}"/>\n\n            <p class="titdest">{{dest.titulo |  slice:0:30}}...</p>\n\n</ion-slide>\n\n\n\n\n\n\n\n\n\n</ion-slides>\n\n\n\n</div>\n\n\n\n<div class="titcat">\n\n  Todas notícias\n\n\n\n</div>\n\n<ion-list>\n\n  <ion-item text-wrap (click)="openPage(item)" *ngFor="let item of noticias | slice:5; let i=index">\n\n    <ion-avatar item-start>\n\n      <img class="imgavatar" src="http://www.inebmed.com.br/{{item.imgtumb}}"/>\n\n    </ion-avatar>\n\n    <div class="titulonot">{{item.titulo}}</div>\n\n    <p>{{item.data}}</p>\n\n  </ion-item>\n\n</ion-list>\n\n</div>\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\noticias\noticias.html"*/,
+        selector: 'page-noticias',template:/*ion-inline-start:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\noticias\noticias.html"*/'<!--\n\n  Generated template for the NoticiasPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n        <ion-navbar color="danger">\n\n            <ion-title>Notícias</ion-title>\n\n          </ion-navbar>\n\n    </ion-header>\n\n\n\n\n\n\n\n\n\n<ion-content  class="home">\n\n<div class="" *ngIf="noticias && noticias.length">\n\n\n\n\n\n\n\n  <div class="slidepatro">\n\n    <div class="titcat">\n\n      Destaques\n\n    </div>\n\n\n\n<ion-slides *ngIf="noticias && noticias.length" padding paginationType autoplay="3000" loop slidesPerView="3">\n\n<ion-slide *ngFor="let dest of noticias | slice:0:5; let i=index"  >\n\n            <img (click)="openPage(dest)"src="http://camaradecondeuba.ba.gov.br/uploads/noticias/7/{{dest.img}}"/>\n\n            <p class="titdest">{{dest.titulo |  slice:0:30}}...</p>\n\n</ion-slide>\n\n\n\n\n\n\n\n\n\n</ion-slides>\n\n\n\n</div>\n\n\n\n<div class="titcat">\n\n  Todas notícias\n\n</div>\n\n<ion-list>\n\n  <ion-item text-wrap (click)="openPage(item)" *ngFor="let item of noticias">\n\n    <ion-avatar item-start>\n\n      <img class="imgavatar" src="http://camaradecondeuba.ba.gov.br/uploads/noticias/7/{{item.img}}"/>\n\n    </ion-avatar>\n\n    <div class="titulonot">{{item.titulo}}</div>\n\n    <p>{{item.data}}</p>\n\n  </ion-item>\n\n</ion-list>\n\n</div>\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\noticias\noticias.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["n" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_1__providers_service_service__["a" /* ServiceProvider */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["r" /* NavController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["s" /* NavParams */]])
 ], NoticiasPage);

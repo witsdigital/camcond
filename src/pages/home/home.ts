@@ -1,3 +1,4 @@
+import { DetalheNotPage } from './../detalhe-not/detalhe-not';
 import { ServiceProvider } from './../../providers/service/service';
 import { GetUnidadesPage } from './../get-unidades/get-unidades';
 import { ExamePage } from './../exame/exame';
@@ -126,6 +127,12 @@ dados: any;
   this.menuCtrl.enable(true, 'menu1');
    this.menuCtrl.open();
  }
+
+ openPage(item){
+  this.navCtrl.push(DetalheNotPage, {
+      ct: item
+  })
+}
 
  openlogin(){
    let modal = this.modalCtrl.create(LoginPage);
