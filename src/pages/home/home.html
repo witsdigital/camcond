@@ -1,6 +1,6 @@
 <ion-header>
-  <ion-toolbar color="primary">
-  <img  width="100%" src="assets/menu/logo.png" alt="">
+  <ion-toolbar color="danger">
+    <img width="100%" src="assets/menu/logo.png" alt="">
 
 
   </ion-toolbar>
@@ -10,54 +10,84 @@
 
 
   <div class="slide">
-          <ion-slides autoplayDisableOnInteraction="false"  autoplay="3000" loop="true" speed="1000" pager>
+    <ion-slides autoplayDisableOnInteraction="false" autoplay="3000" loop="true" speed="1000" pager>
 
-            <ion-slide >
-              <img src="http://inebmed.com.br/uploads/app/aviso_banner.png" alt="">
-            </ion-slide>
-
-          
-          </ion-slides>
-
-        </div>
+      <ion-slide>
+        <img src="http://camaradecondeuba.ba.gov.br/uploads/destaque.png" alt="">
+      </ion-slide>
 
 
-      <div class="menu1">
-          <div *ngFor="let p of perfil" class="imagens-menu"><img width="7%" height="5%" (click)="openPages(p)" src="assets/menu/user.png" alt=""></div>
-          <div  *ngFor="let p of unidades" class="imagens-menu"><img  width="7%" height="5%" (click)="openPages(p)" src="assets/menu/unidades.png" alt=""></div>
-          <div  *ngFor="let p of noticias" class="imagens-menu"><img  width="7%" height="5%" (click)="openPages(p)" src="assets/menu/news.png" alt=""></div>
-          <div  *ngFor="let p of dicas" class="imagens-menu"><img  width="7%" height="5%" (click)="openPages(p)" src="assets/menu/dicas.png" alt=""> <br></div>
-      </div>
-      <div class="menu2">
+    </ion-slides>
 
-        <div *ngIf="user" class="">
-          <div  *ngFor="let p of exameList" class="cadastro-exame"><img  width="100%" (click)="openPages(p)" src="assets/menu/bt_exame.png" alt=""> <br></div>
-        </div>
-        <div *ngIf="!user" class="">
-          <div  (click)="openlogin()" class="cadastro-exame"><img  width="100%"  src="assets/menu/bt_cadastro.png" alt=""> <br></div>
-        </div>
+  </div>
 
-        <div  *ngFor="let p of exame" class="cadastro-exame"><img  width="100%" (click)="openPages(p)" src="assets/menu/bt_reserve.png" alt=""> <br></div>
-      </div>
-      <div class="menu3">
-        <ion-row>
-          <ion-col>
-<img  (click)="openMenu()" src="assets/menu/menu.png" alt="">
-          </ion-col>
-          <ion-col>
-<img  *ngFor="let p of eventos" (click)="openPages(p)" src="assets/menu/eventos.png" alt="">
-          </ion-col>
-          <ion-col>
-<img  *ngFor="let p of saude" (click)="openPages(p)" src="assets/menu/atendimento.png" alt="">
-          </ion-col>
-          <ion-col>
-<img *ngFor="let p of especialistas"   (click)="openPages(p)" src="assets/menu/espec.png" alt="">
-          </ion-col>
-        </ion-row>
+  <div padding>
+    <ion-segment color="danger" [(ngModel)]="menu">
+      <ion-segment-button value="ferramentas">
+        Utilidades
+      </ion-segment-button>
+      <ion-segment-button value="news">
+        Notícias
+      </ion-segment-button>
+    </ion-segment>
+  </div>
 
-      </div>
+  <div [ngSwitch]="menu">
+    <ion-list *ngSwitchCase="'news'">
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="img/thumbnail-puppy-1.jpg">
+        </ion-thumbnail>
+        <h2>Notícias</h2>
+      </ion-item>
+      ...
+    </ion-list>
+
+    <ion-list class="boxicons" *ngSwitchCase="'ferramentas'">
+      <ion-row class="menuicones">
+        <ion-col col-4>
+          <div *ngFor="let p of perfil" class="">
+            <img (click)="openPages(p)" src="assets/menu/user.png" alt="">
+          </div>
+        </ion-col>
+        <ion-col col-4>
+          <div *ngFor="let p of perfil" class="">
+            <img (click)="openPages(p)" src="assets/menu/vereadores.png" alt="">
+          </div>
+        </ion-col>
+        <ion-col col-4>
+          <div *ngFor="let p of perfil" class="">
+            <img (click)="openPages(p)" src="assets/menu/ouvidoria.png" alt="">
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row class="menuicones">
+        <ion-col col-4>
+          <div *ngFor="let p of perfil" class="">
+            <img (click)="openPages(p)" src="assets/menu/transparencia.png" alt="">
+          </div>
+        </ion-col>
+        <ion-col col-4>
+          <div *ngFor="let p of perfil" class="">
+            <img (click)="openPages(p)" src="assets/menu/transmissoes.png" alt="">
+          </div>
+        </ion-col>
+        <ion-col col-4>
+          <div *ngFor="let p of perfil" class="">
+            <img (click)="openPages(p)" src="assets/menu/galerias.png" alt="">
+          </div>
+        </ion-col>
+      </ion-row>
+
+
+    </ion-list>
+  </div>
+
+
+
+
 
 </ion-content>
 <ion-footer>
-    <img class="imgwits" src="assets/logow.png"/>
+  <img class="imgwits" src="assets/logow.png" />
 </ion-footer>

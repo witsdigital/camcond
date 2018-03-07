@@ -30,8 +30,11 @@ export class HomePage {
   exameList: [{title: string, component: any}];
   status: any = [];
   user:any;
-
+menu:any;
   constructor(public modalCtrl: ModalController,public toastCtrl: ToastController, public network: Network, public navCtrl: NavController, public menuCtrl: MenuController) {
+    
+    this.menu = 'ferramentas';
+    
     if(localStorage.getItem('userData')){
 
     this.user = true;

@@ -11,7 +11,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class ServiceProvider {
 
-api:string = 'http://www.inebmed.com.br/';
+api:string = 'http://www.meupainel.com.br/ted2/';
 
   constructor(public http: Http) {
 
