@@ -1,3 +1,4 @@
+import { TransparenciaPage } from './../transparencia/transparencia';
 import { DetalheNotPage } from './../detalhe-not/detalhe-not';
 import { ServiceProvider } from './../../providers/service/service';
 import { GetUnidadesPage } from './../get-unidades/get-unidades';
@@ -22,7 +23,7 @@ export class HomePage {
 
   perfil: [{title: string, component: any}];
   noticias: [{title: string, component: any}];
-  dicas: [{title: string, component: any}];
+  transparencia: [{title: string, component: any}];
   unidades: [{title: string, component: any}];
   saude: [{title: string, component: any}];
   eventos: [{title: string, component: any}];
@@ -50,8 +51,8 @@ dados: any;
   this.unidades = [
     {title: "Unidades", component: GetUnidadesPage}
   ]
-  this.dicas = [
-    {title: "Dicas", component: DicasPage}
+    this.transparencia = [
+    {title: "Transparencia", component: TransparenciaPage}
   ]
   this.noticias = [
     {title: "noticias", component: NoticiasPage}

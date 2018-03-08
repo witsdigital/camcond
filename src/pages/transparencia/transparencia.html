@@ -1,0 +1,185 @@
+<!--
+  Generated template for the EspecialistasPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="danger">
+    <ion-title>Transparência</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <div padding>
+    <ion-segment color="danger" [(ngModel)]="menu">
+      <ion-segment-button value="recdeso">
+        Receita/Despesa
+      </ion-segment-button>
+      <ion-segment-button value="transparencia">
+        Transparência
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div [ngSwitch]="menu">
+    <ion-list *ngSwitchCase="'transparencia'">
+      <div padding>
+        <ion-segment [(ngModel)]="pet">
+          <ion-segment-button value="leis">
+            Leis
+          </ion-segment-button>
+          <ion-segment-button value="contratos">
+            Contratos
+          </ion-segment-button>
+          <ion-segment-button value="dispensa">
+            Dispensa
+          </ion-segment-button>
+          <ion-segment-button value="licitacao">
+            Licitação
+          </ion-segment-button>
+          <ion-segment-button value="pregao">
+            Pregão
+          </ion-segment-button>
+        </ion-segment>
+      </div>
+
+      <div class="listtransp" [ngSwitch]="pet">
+        <ion-list inset *ngSwitchCase="'leis'">
+
+          <div *ngFor="let p of publicacoes">
+            <ion-item *ngIf="p.tipo =='Leis'" (click)="openPage(p)">
+              <div class="listtransp" text-wrap> {{p.titulo}}</div>
+              <ion-icon name="search" item-end></ion-icon>
+            </ion-item>
+          </div>
+
+        </ion-list>
+
+        <ion-list inset *ngSwitchCase="'contratos'">
+          <div *ngFor="let p of publicacoes">
+            <ion-item *ngIf="p.tipo =='Contratos'" (click)="openPage(p)">
+              <div class="listtransp" text-wrap> {{p.titulo}}</div>
+              <ion-icon name="search" item-end></ion-icon>
+            </ion-item>
+          </div>
+        </ion-list>
+
+        <ion-list inset *ngSwitchCase="'dispensa'">
+          <div *ngFor="let p of publicacoes">
+            <ion-item *ngIf="p.tipo =='Dispensa'" (click)="openPage(p)">
+              <div class="listtransp" text-wrap> {{p.titulo}}</div>
+              <ion-icon name="search" item-end></ion-icon>
+            </ion-item>
+          </div>
+        </ion-list>
+
+        <ion-list inset *ngSwitchCase="'licitacao'">
+          <div *ngFor="let p of publicacoes">
+            <ion-item *ngIf="p.tipo =='Licitação'" (click)="openPage(p)">
+              <div class="listtransp" text-wrap> {{p.titulo}}</div>
+              <ion-icon name="search" item-end></ion-icon>
+            </ion-item>
+          </div>
+        </ion-list>
+
+        <ion-list inset *ngSwitchCase="'pregao'">
+          <div *ngFor="let p of publicacoes">
+            <ion-item *ngIf="p.tipo =='Pregão'" (click)="openPage(p)">
+              <div class="listtransp" text-wrap> {{p.titulo}}</div>
+              <ion-icon name="search" item-end></ion-icon>
+            </ion-item>
+          </div>
+        </ion-list>
+      </div>
+
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'recdeso'">
+      <ion-list>
+        <div *ngFor="let item of recdesp">
+          <ion-item *ngIf="item.mes_competencia ==1">
+            <ion-icon name="calendar" item-start></ion-icon>
+            <div>Janeiro</div>
+            <button (click)="openDados('RECEITA')"  ion-button clear item-end>Receita</button>
+            <button (click)="openDados('DESPESA')" ion-button clear item-end>Despesa</button>
+          </ion-item>
+          <ion-item *ngIf="item.mes_competencia ==2">
+            <ion-icon name="calendar" item-start></ion-icon>
+            <div>Fevereiro</div>
+           <button (click)="openDados('RECEITA')"  ion-button clear item-end>Receita</button>
+            <button (click)="openDados('DESPESA')" ion-button clear item-end>Despesa</button>
+          </ion-item>
+          <ion-item *ngIf="item.mes_competencia ==3">
+            <ion-icon name="calendar" item-start></ion-icon>
+            <div>Março</div>
+           <button (click)="openDados('RECEITA')"  ion-button clear item-end>Receita</button>
+            <button (click)="openDados('DESPESA')" ion-button clear item-end>Despesa</button>
+          </ion-item>
+          <ion-item *ngIf="item.mes_competencia ==4">
+            <ion-icon name="calendar" item-start></ion-icon>
+            <div>Abril</div>
+           <button (click)="openDados('RECEITA')"  ion-button clear item-end>Receita</button>
+            <button (click)="openDados('DESPESA')" ion-button clear item-end>Despesa</button>
+          </ion-item>
+          <ion-item *ngIf="item.mes_competencia ==5">
+            <ion-icon name="calendar" item-start></ion-icon>
+            <div>Maio</div>
+           <button (click)="openDados('RECEITA')"  ion-button clear item-end>Receita</button>
+            <button (click)="openDados('DESPESA')" ion-button clear item-end>Despesa</button>
+          </ion-item>
+          <ion-item *ngIf="item.mes_competencia ==6">
+            <ion-icon name="calendar" item-start></ion-icon>
+            <div>Junho</div>
+           <button (click)="openDados('RECEITA')"  ion-button clear item-end>Receita</button>
+            <button (click)="openDados('DESPESA')" ion-button clear item-end>Despesa</button>
+          </ion-item>
+          <ion-item *ngIf="item.mes_competencia ==7">
+            <ion-icon name="calendar" item-start></ion-icon>
+            <div>Julho</div>
+           <button (click)="openDados('RECEITA')"  ion-button clear item-end>Receita</button>
+            <button (click)="openDados('DESPESA')" ion-button clear item-end>Despesa</button>
+          </ion-item>
+          <ion-item *ngIf="item.mes_competencia ==8">
+            <ion-icon name="calendar" item-start></ion-icon>
+            <div>Agosto</div>
+           <button (click)="openDados('RECEITA')"  ion-button clear item-end>Receita</button>
+            <button (click)="openDados('DESPESA')" ion-button clear item-end>Despesa</button>
+          </ion-item>
+          <ion-item *ngIf="item.mes_competencia ==9">
+            <ion-icon name="calendar" item-start></ion-icon>
+            <div>Setembro</div>
+           <button (click)="openDados('RECEITA')"  ion-button clear item-end>Receita</button>
+            <button (click)="openDados('DESPESA')" ion-button clear item-end>Despesa</button>
+          </ion-item>
+          <ion-item *ngIf="item.mes_competencia ==10">
+            <ion-icon name="calendar" item-start></ion-icon>
+            <div>Outubro</div>
+           <button (click)="openDados('RECEITA')"  ion-button clear item-end>Receita</button>
+            <button (click)="openDados('DESPESA')" ion-button clear item-end>Despesa</button>
+          </ion-item>
+          <ion-item *ngIf="item.mes_competencia ==11">
+            <ion-icon name="calendar" item-start></ion-icon>
+            <div>Novembro</div>
+           <button (click)="openDados('RECEITA')"  ion-button clear item-end>Receita</button>
+            <button (click)="openDados('DESPESA')" ion-button clear item-end>Despesa</button>
+          </ion-item>
+          <ion-item *ngIf="item.mes_competencia ==12">
+            <ion-icon name="calendar" item-start></ion-icon>
+            <div>Dezembro</div>
+           <button (click)="openDados('RECEITA')"  ion-button clear item-end>Receita</button>
+            <button (click)="openDados('DESPESA')" ion-button clear item-end>Despesa</button>
+          </ion-item>
+        </div>
+
+      </ion-list>
+    </ion-list>
+  </div>
+
+
+
+
+
+</ion-content>

@@ -1,14 +1,14 @@
 webpackJsonp([17],{
 
-/***/ 384:
+/***/ 388:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DetalheExamePageModule", function() { return DetalheExamePageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DetalheNotPageModule", function() { return DetalheNotPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__detalhe_exame__ = __webpack_require__(130);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__detalhe_not__ = __webpack_require__(65);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var DetalheExamePageModule = (function () {
-    function DetalheExamePageModule() {
+var DetalheNotPageModule = (function () {
+    function DetalheNotPageModule() {
     }
-    return DetalheExamePageModule;
+    return DetalheNotPageModule;
 }());
-DetalheExamePageModule = __decorate([
+DetalheNotPageModule = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__detalhe_exame__["a" /* DetalheExamePage */],
+            __WEBPACK_IMPORTED_MODULE_2__detalhe_not__["a" /* DetalheNotPage */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__detalhe_exame__["a" /* DetalheExamePage */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__detalhe_not__["a" /* DetalheNotPage */]),
         ],
     })
-], DetalheExamePageModule);
+], DetalheNotPageModule);
 
-//# sourceMappingURL=detalhe-exame.module.js.map
+//# sourceMappingURL=detalhe-not.module.js.map
 
 /***/ })
 

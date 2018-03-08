@@ -10,13 +10,13 @@
 
 
   <div class="slide">
-      <ion-slides *ngIf="dados && dados.length" autoplay="5000" class="slideroption" pager="true"   loop="true" speed="300">
+    <ion-slides *ngIf="dados && dados.length" autoplay="5000" class="slideroption" pager="true" loop="true" speed="300">
 
-     <div *ngFor="let item of dados | slice:0:1"> 
-      <ion-slide>
+      <div *ngFor="let item of dados | slice:0:1">
+        <ion-slide>
           <img src="http://camaradecondeuba.ba.gov.br/uploads/destaque.png" alt="">
-      </ion-slide>
-    </div>
+        </ion-slide>
+      </div>
 
     </ion-slides>
 
@@ -35,20 +35,24 @@
 
   <div [ngSwitch]="menu">
     <ion-list *ngSwitchCase="'news'">
-      <ion-item>
-        <ion-thumbnail item-start>
-          <img src="img/thumbnail-puppy-1.jpg">
-        </ion-thumbnail>
-        <h2>Notícias</h2>
-      </ion-item>
-      <ion-item *ngFor="let item of dados | slice:0:10" (click)="openPage(item)">
-        {{item.titulo}}
-      </ion-item>
-      <ion-item *ngFor="let p of noticias">
-        <ion-buttons>
-          <div (click)="openPages(p)">Ver todas</div>
-        </ion-buttons>
-      </ion-item>
+
+      <ion-list>
+        <ion-item *ngFor="let item of dados | slice:0:10" (click)="openPage(item)">
+          <ion-avatar item-start>
+            <img src="http://camaradecondeuba.ba.gov.br/uploads/noticias/7/{{item.img}}">
+          </ion-avatar>
+          <h2> {{item.titulo}}</h2>
+          <p>{{item.data}} • {{item.autor}}</p>
+          <button ion-button clear item-end>abrir</button>
+        </ion-item>
+<button ion-button color="secondary" *ngFor="let p of noticias" (click)="openPages(p)" clear>Ver todas</button>
+      </ion-list>
+
+
+
+
+
+
     </ion-list>
 
     <ion-list class="boxicons" *ngSwitchCase="'ferramentas'">
@@ -71,7 +75,7 @@
       </ion-row>
       <ion-row class="menuicones">
         <ion-col col-4>
-          <div *ngFor="let p of dicas" class="">
+          <div *ngFor="let p of transparencia" class="">
             <img (click)="openPages(p)" src="assets/menu/transparencia.png" alt="">
           </div>
         </ion-col>

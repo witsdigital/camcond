@@ -26437,6 +26437,10 @@ page-perfil .bloco2 .nome-perfil {
   font-size: 30px;
 }
 
+page-transparencia .listtransp {
+  font-size: 12px;
+}
+
 page-unidades .imagemlogo {
   margin-top: 30px;
   padding: 0% 10% 0 10%;

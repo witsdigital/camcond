@@ -1,14 +1,14 @@
 webpackJsonp([21],{
 
-/***/ 380:
+/***/ 384:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DetalheCalendarioPageModule", function() { return DetalheCalendarioPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DetalheEspecPageModule", function() { return DetalheEspecPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__detalhe_calendario__ = __webpack_require__(126);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__detalhe_espec__ = __webpack_require__(64);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var DetalheCalendarioPageModule = (function () {
-    function DetalheCalendarioPageModule() {
+var DetalheEspecPageModule = (function () {
+    function DetalheEspecPageModule() {
     }
-    return DetalheCalendarioPageModule;
+    return DetalheEspecPageModule;
 }());
-DetalheCalendarioPageModule = __decorate([
+DetalheEspecPageModule = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__detalhe_calendario__["a" /* DetalheCalendarioPage */],
+            __WEBPACK_IMPORTED_MODULE_2__detalhe_espec__["a" /* DetalheEspecPage */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__detalhe_calendario__["a" /* DetalheCalendarioPage */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__detalhe_espec__["a" /* DetalheEspecPage */]),
         ],
     })
-], DetalheCalendarioPageModule);
+], DetalheEspecPageModule);
 
-//# sourceMappingURL=detalhe-calendario.module.js.map
+//# sourceMappingURL=detalhe-espec.module.js.map
 
 /***/ })
 

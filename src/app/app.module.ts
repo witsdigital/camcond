@@ -1,3 +1,4 @@
+import { TransparenciaPage } from './../pages/transparencia/transparencia';
 import { DetalheCalendarioPage } from './../pages/detalhe-calendario/detalhe-calendario';
 import { CalendarioPage } from './../pages/calendario/calendario';
 import { EventCalendarioPage } from './../pages/event-calendario/event-calendario';
@@ -42,14 +43,16 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { Geolocation } from '@ionic-native/geolocation';
 import { DocumentViewer } from '@ionic-native/document-viewer';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
-import { OpenpdfPage} from './../pages/openpdf/openpdf';
+import { OpenpdfPage } from './../pages/openpdf/openpdf';
+import { TransparenciaDetalhePage } from '../pages/transparencia-detalhe/transparencia-detalhe';
 
 
 
 
 @NgModule({
   declarations: [
-    
+    TransparenciaDetalhePage,
+    TransparenciaPage,
     OpenpdfPage,
     MyApp,
     EspecialistasPage,
@@ -85,10 +88,12 @@ import { OpenpdfPage} from './../pages/openpdf/openpdf';
     HttpModule,
     IonicModule.forRoot(MyApp),
     IonicImageViewerModule,
-     NgCalendarModule
+    NgCalendarModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
+    TransparenciaDetalhePage,
+    TransparenciaPage,
     MyApp,
     EspecialistasPage,
     HomePage,
@@ -123,10 +128,10 @@ import { OpenpdfPage} from './../pages/openpdf/openpdf';
     Geolocation,
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
     ServiceProvider,
     SocialSharing,
     Network
   ]
 })
-export class AppModule {}
+export class AppModule { }

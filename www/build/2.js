@@ -1,14 +1,14 @@
 webpackJsonp([2],{
 
-/***/ 399:
+/***/ 403:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SaudePageModule", function() { return SaudePageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TransparenciaPageModule", function() { return TransparenciaPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__saude__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__transparencia__ = __webpack_require__(126);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var SaudePageModule = (function () {
-    function SaudePageModule() {
+var TransparenciaPageModule = (function () {
+    function TransparenciaPageModule() {
     }
-    return SaudePageModule;
+    return TransparenciaPageModule;
 }());
-SaudePageModule = __decorate([
+TransparenciaPageModule = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__saude__["a" /* SaudePage */],
+            __WEBPACK_IMPORTED_MODULE_2__transparencia__["a" /* TransparenciaPage */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__saude__["a" /* SaudePage */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__transparencia__["a" /* TransparenciaPage */]),
         ],
     })
-], SaudePageModule);
+], TransparenciaPageModule);
 
-//# sourceMappingURL=saude.module.js.map
+//# sourceMappingURL=transparencia.module.js.map
 
 /***/ })
 

@@ -1,14 +1,14 @@
 webpackJsonp([23],{
 
-/***/ 378:
+/***/ 382:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ChatPageModule", function() { return ChatPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DetalheCalendarioPageModule", function() { return DetalheCalendarioPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__chat__ = __webpack_require__(256);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__detalhe_calendario__ = __webpack_require__(129);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var ChatPageModule = (function () {
-    function ChatPageModule() {
+var DetalheCalendarioPageModule = (function () {
+    function DetalheCalendarioPageModule() {
     }
-    return ChatPageModule;
+    return DetalheCalendarioPageModule;
 }());
-ChatPageModule = __decorate([
+DetalheCalendarioPageModule = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__chat__["a" /* ChatPage */],
+            __WEBPACK_IMPORTED_MODULE_2__detalhe_calendario__["a" /* DetalheCalendarioPage */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__chat__["a" /* ChatPage */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__detalhe_calendario__["a" /* DetalheCalendarioPage */]),
         ],
     })
-], ChatPageModule);
+], DetalheCalendarioPageModule);
 
-//# sourceMappingURL=chat.module.js.map
+//# sourceMappingURL=detalhe-calendario.module.js.map
 
 /***/ })
 
