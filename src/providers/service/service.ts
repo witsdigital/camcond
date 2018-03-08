@@ -27,6 +27,7 @@ api:string = 'http://camaradecondeuba.ba.gov.br/';
 	  return this.http.get(this.api+'noticia/getall/').map(res=> res.json())
   }
 
+
   getGaleria(){
 	  return this.http.get(this.api+'galeria/getapp/').map(res=> res.json())
   }
@@ -75,6 +76,20 @@ api:string = 'http://camaradecondeuba.ba.gov.br/';
       let headers = new Headers();
   
       this.http.post(this.api+'api/apiLogin.php', JSON.stringify(credentials), {headers: headers})
+        .subscribe(res => {
+          resolve(res.json());
+        }, (err) => {
+          reject(err);
+        });
+    });
+  
+  }
+
+  getPublicacaoPDF(credentials) {
+    return new Promise((resolve, reject) => {
+      let headers = new Headers();
+  
+      this.http.post(this.api+'publicacoes/getPublicacaoPDF', JSON.stringify(credentials), {headers: headers})
         .subscribe(res => {
           resolve(res.json());
         }, (err) => {
