@@ -48,9 +48,6 @@ export class DetalheDicasPage  {
   }
 
 
-  openURL(url) {
-    InAppBrowser.open(url,'_system','location=yes');
-}
 
 
 }
