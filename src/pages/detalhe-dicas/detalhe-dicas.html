@@ -16,6 +16,7 @@
 <ion-content padding>
   <h3>{{ct.titulo}}</h3>
   <h4>{{ct.objeto}}</h4>
-  <h4 *ngFor="let p of dados">{{p.arquivo}}</h4>
+  <h4 *ngFor="let p of dados">link: http://camaradecondeuba.ba.gov.br/uploads/publicadas/7/{{p.link}}</h4>
+  <ion-buttons *ngFor="let p of dados"><a href="http://camaradecondeuba.ba.gov.br/uploads/publicadas/7/{{p.link}}">Consultar</a></ion-buttons>
 </ion-content>
 
