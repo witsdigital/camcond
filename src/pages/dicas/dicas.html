@@ -6,51 +6,18 @@
 -->
 <ion-header>
     
-        <ion-navbar color="primary">
+        <ion-navbar color="danger">
             <ion-title>Dicas</ion-title>
           </ion-navbar>
     </ion-header>
     
-    <ion-content class="home">
+    <ion-content>
 
 
+<ion-list>
+  <ion-item *ngFor="let p of publicacoes" (click)="openPage(p)">
+    {{p.titulo}}
+  </ion-item>
+</ion-list>
 
-<div class="" *ngIf="dicas && dicas.length">
-
-
-
-  <div class="slidepatro">
-    <div class="titcat">
-      Destaques
-    </div>
-
-    <ion-slides *ngIf="dicas && dicas.length" padding paginationType autoplay="3000" loop slidesPerView="3">
-      <ion-slide (click)="openPage(dest)" *ngFor="let dest of dicas | slice:0:5; let i=index">
-        <img src="http://www.inebmed.com.br/{{dest.imgtumb}}" />
-        <p class="titdest">{{dest.titulo | slice:0:30}}...</p>
-      </ion-slide>
-
-
-
-
-    </ion-slides>
-
-  </div>
-
-  <div class="titcat">
-    Todas notícias
-
-  </div>
-  <ion-list>
-    <ion-item text-wrap (click)="openPage(item)" *ngFor="let item of dicas | slice:5; let i=index">
-      <ion-avatar item-start>
-        <img class="imgavatar" src="http://www.inebmed.com.br/{{item.imgtumb}}" />
-      </ion-avatar>
-      <div class="titulonot">{{item.titulo}}</div>
-      <p>{{item.data}}</p>
-    </ion-item>
-  </ion-list>
-</div>
-
-
-      </ion-content>
+    </ion-content>

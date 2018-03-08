@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-        <ion-navbar color="primary">
+        <ion-navbar color="danger">
             <ion-title>Notícias</ion-title>
           </ion-navbar>
     </ion-header>
@@ -25,8 +25,8 @@
     </div>
 
 <ion-slides *ngIf="noticias && noticias.length" padding paginationType autoplay="3000" loop slidesPerView="3">
-<ion-slide (click)="openPage(dest)"  *ngFor="let dest of noticias | slice:0:5; let i=index"  >
-            <img src="http://www.inebmed.com.br/{{dest.imgtumb}}"/>
+<ion-slide *ngFor="let dest of noticias | slice:0:5; let i=index"  >
+            <img (click)="openPage(dest)"src="http://camaradecondeuba.ba.gov.br/uploads/noticias/7/{{dest.img}}"/>
             <p class="titdest">{{dest.titulo |  slice:0:30}}...</p>
 </ion-slide>
 
@@ -39,12 +39,11 @@
 
 <div class="titcat">
   Todas notícias
-
 </div>
 <ion-list>
-  <ion-item text-wrap (click)="openPage(item)" *ngFor="let item of noticias | slice:5; let i=index">
+  <ion-item text-wrap (click)="openPage(item)" *ngFor="let item of noticias">
     <ion-avatar item-start>
-      <img class="imgavatar" src="http://www.inebmed.com.br/{{item.imgtumb}}"/>
+      <img class="imgavatar" src="http://camaradecondeuba.ba.gov.br/uploads/noticias/7/{{item.img}}"/>
     </ion-avatar>
     <div class="titulonot">{{item.titulo}}</div>
     <p>{{item.data}}</p>

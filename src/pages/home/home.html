@@ -10,12 +10,13 @@
 
 
   <div class="slide">
-    <ion-slides autoplayDisableOnInteraction="false" autoplay="3000" loop="true" speed="1000" pager>
+      <ion-slides *ngIf="dados && dados.length" autoplay="5000" class="slideroption" pager="true"   loop="true" speed="300">
 
+     <div *ngFor="let item of dados | slice:0:1"> 
       <ion-slide>
-        <img src="http://camaradecondeuba.ba.gov.br/uploads/destaque.png" alt="">
+          <img src="http://camaradecondeuba.ba.gov.br/uploads/destaque.png" alt="">
       </ion-slide>
-
+    </div>
 
     </ion-slides>
 
@@ -40,7 +41,14 @@
         </ion-thumbnail>
         <h2>Notícias</h2>
       </ion-item>
-      ...
+      <ion-item *ngFor="let item of dados | slice:0:10" (click)="openPage(item)">
+        {{item.titulo}}
+      </ion-item>
+      <ion-item *ngFor="let p of noticias">
+        <ion-buttons>
+          <div (click)="openPages(p)">Ver todas</div>
+        </ion-buttons>
+      </ion-item>
     </ion-list>
 
     <ion-list class="boxicons" *ngSwitchCase="'ferramentas'">
@@ -63,17 +71,17 @@
       </ion-row>
       <ion-row class="menuicones">
         <ion-col col-4>
-          <div *ngFor="let p of perfil" class="">
+          <div *ngFor="let p of dicas" class="">
             <img (click)="openPages(p)" src="assets/menu/transparencia.png" alt="">
           </div>
         </ion-col>
         <ion-col col-4>
-          <div *ngFor="let p of perfil" class="">
+          <div *ngFor="let p of saude" class="">
             <img (click)="openPages(p)" src="assets/menu/transmissoes.png" alt="">
           </div>
         </ion-col>
         <ion-col col-4>
-          <div *ngFor="let p of perfil" class="">
+          <div *ngFor="let p of eventos" class="">
             <img (click)="openPages(p)" src="assets/menu/galerias.png" alt="">
           </div>
         </ion-col>

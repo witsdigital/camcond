@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar color="primary">
+  <ion-navbar color="danger">
     <ion-title>{{ct.titulo}}</ion-title>
   </ion-navbar>
 
@@ -18,25 +18,19 @@
 
   <ion-item>
     <ion-avatar item-start>
-      <img src="http://www.inebmed.com.br/{{ct.imgtumb}}">
+      <img src="http://camaradecondeuba.ba.gov.br/uploads/noticias/7/{{ct.img}}">
     </ion-avatar>
     <h2 text-wrap>{{ct.titulo}}</h2>
     <p>  {{ct.subtitulo}}</p>
   </ion-item>
 
-  <img src="http://www.inebmed.com.br/{{ct.imgtumb}}">
+  <img src="http://camaradecondeuba.ba.gov.br/uploads/noticias/7/{{ct.img}}">
 
   <ion-card-content>
   <div style="text-align: justify;" [innerHTML]="ct.conteudo"></div>
   </ion-card-content>
 
   <ion-row>
-    <ion-col>
-      <button ion-button icon-left clear small>
-        <ion-icon name="thumbs-up"></ion-icon>
-        <div>12 Likes</div>
-      </button>
-    </ion-col>
     <ion-col>
       <button ion-button icon-left clear small>
         <ion-icon name="share"></ion-icon>

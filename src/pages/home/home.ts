@@ -1,3 +1,5 @@
+import { DetalheNotPage } from './../detalhe-not/detalhe-not';
+import { ServiceProvider } from './../../providers/service/service';
 import { GetUnidadesPage } from './../get-unidades/get-unidades';
 import { ExamePage } from './../exame/exame';
 import { LoginPage } from './../login/login';
@@ -31,18 +33,16 @@ export class HomePage {
   status: any = [];
   user:any;
 menu:any;
-  constructor(public modalCtrl: ModalController,public toastCtrl: ToastController, public network: Network, public navCtrl: NavController, public menuCtrl: MenuController) {
-    
-    this.menu = 'ferramentas';
-    
-    if(localStorage.getItem('userData')){
 
-    this.user = true;
 
-    }else{
-      this.user = false;
+dados: any;
+  constructor(public service: ServiceProvider, public modalCtrl: ModalController,public toastCtrl: ToastController, public network: Network, public navCtrl: NavController, public menuCtrl: MenuController) {
+   
+    this.getNoticias();
+    console.log(this.dados);
 
-    }
+
+  this.menu = 'ferramentas';
 
   this.perfil = [
     {title: "Perfil", component: PerfilPage}
@@ -78,10 +78,6 @@ menu:any;
   ]
 
 
-
-
-
-
   this.network.onDisconnect().subscribe(() => {
     let toast = this.toastCtrl.create({
       message: 'Ops, sem conexão com a internet.',
@@ -114,9 +110,15 @@ menu:any;
     }, 3000);
   });
 
+  }
 
-
-
+  
+  getNoticias(){
+    this.service.getNoticias().subscribe((data)=>{
+      this.dados = data;
+    },(erro)=>{
+      console.log(erro);
+    });
 
   }
 
@@ -125,6 +127,12 @@ menu:any;
   this.menuCtrl.enable(true, 'menu1');
    this.menuCtrl.open();
  }
+
+ openPage(item){
+  this.navCtrl.push(DetalheNotPage, {
+      ct: item
+  })
+}
 
  openlogin(){
    let modal = this.modalCtrl.create(LoginPage);
@@ -136,23 +144,7 @@ menu:any;
  }
 
   openPages(page) {
-  if(page.component == PerfilPage ){
-    if(localStorage.getItem('userData')){
-        this.navCtrl.push(page.component);
-    }else{
-      let toast = this.toastCtrl.create({
-        message: 'Você não esta logado',
-        duration: 3000,
-        position: 'top',
-    cssClass: "toast-error"
-      });
-
-    toast.present();
-    }
-  }else{
           this.navCtrl.push(page.component);
-
-  }
 
   }
 

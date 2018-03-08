@@ -20,19 +20,13 @@ import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-an
 export class SaudePage {
 
 
-  chat: any;
+  videos: any;
   user: any;
   user2;
 
   constructor(public service: ServiceProvider, public loadingCtrl: LoadingController, public navCtrl: NavController, public navParams: NavParams) {
     
-    this.user = JSON.parse(localStorage.getItem('userData'));
-    
-    if(localStorage.getItem('userData')){
-          this.user2 = true;
-          }else{
-            this.user2 = false;
-          }
+    this.getTvCamara();
 
     let loader = this.loadingCtrl.create({
       content: "Aguarde...",
@@ -52,35 +46,14 @@ export class SaudePage {
     this.navCtrl.push(CalendarioPage);
   }
 
+  getTvCamara(){
+    this.service.getTvCamara().subscribe((data)=>{
+      this.videos = data;
+    console.log(data);
+    },(erro)=>{
+      console.log(erro);
+    });
 
-
-  abrirChat(){
-    
-    this.chat = [
-      {
-        user1: this.user[0].id_usuario,
-        user2: 4
-      }
-    ];
-
-  this.service.newChat(this.chat[0]).then((result)=>{
-    this.chat = result;
-    if(this.chat.mensage == 1){
-      console.log("sucesso");
-      this.navCtrl.push(ChatPage, {
-        users: this.chat 
-      });
-    }else{
-      console.log("erro");
-    }
-  },(error)=>{
-  
-  });
-
-
-  
-  
-      
-    }
+  }
 
 }

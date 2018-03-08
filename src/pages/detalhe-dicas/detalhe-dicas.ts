@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
+import { ServiceProvider } from '../../providers/service/service';
 
 /**
  * Generated class for the DetalheDicasPage page.
@@ -17,19 +18,36 @@ export class DetalheDicasPage  {
   
   ct: any;
 
-  constructor(public loadingCtrl: LoadingController, public navCtrl: NavController, public navParams: NavParams) {
+  dados: any;
+
+  constructor(public service: ServiceProvider, public loadingCtrl: LoadingController, public navCtrl: NavController, public navParams: NavParams) {
+    this.ct = navParams.get("ct");
     let loader = this.loadingCtrl.create({
       content: "Aguarde...",
       duration: 1000
     });
     loader.present();
-    this.ct = navParams.get("ct");
-    console.log(this.ct);
+    this.getPublicacaoPDF();
+    
+  
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DetalheDicasPage');
   }
+
+
+  getPublicacaoPDF(){
+    
+    this.service.getPublicacaoPDF(this.ct.id).then((data)=>{
+      this.dados = data;
+    console.log(data);
+    },(erro)=>{
+      console.log(erro);
+    });
+  }
+
+
 
 
 }

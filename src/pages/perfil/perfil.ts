@@ -1,3 +1,5 @@
+import { DetalheEspecPage } from './../detalhe-espec/detalhe-espec';
+import { ServiceProvider } from './../../providers/service/service';
 import { HomePage } from './../home/home';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
@@ -15,20 +17,37 @@ import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-an
   templateUrl: 'perfil.html',
 })
 export class PerfilPage {
-  dadosUser: any;
+  vereadores: any;
+
   
-  constructor(public loadingCtrl: LoadingController, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public service: ServiceProvider, public loadingCtrl: LoadingController, public navCtrl: NavController, public navParams: NavParams) {
     let loader = this.loadingCtrl.create({
       content: "Aguarde...",
       duration: 1000
     });
     loader.present();
-    this.dadosUser = JSON.parse(localStorage.getItem('userData'));
+    this.getVereadores();
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PerfilPage');
   }
+
+  getVereadores(){
+    this.service.getVereadores().subscribe((data)=>{
+      this.vereadores = data;
+    console.log(data);
+    },(erro)=>{
+      console.log(erro);
+    });
+
+  }
+
+  openPage(item){
+    this.navCtrl.push(DetalheEspecPage, {
+        ct: item
+    })
+}
 
   sair(){
     localStorage.removeItem('userData');

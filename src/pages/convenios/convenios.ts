@@ -15,7 +15,7 @@ import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-an
   templateUrl: 'convenios.html',
 })
 export class ConveniosPage {
-  convenios: any = this.getConvenios();
+  publicacoes: any;
 
 
   constructor(public loadingCtrl: LoadingController, public service:ServiceProvider, public navCtrl: NavController, public navParams: NavParams) {
@@ -24,15 +24,17 @@ export class ConveniosPage {
       duration: 1000
     });
     loader.present();
+
+    this.getPublicacao();
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ConveniosPage');
   }
 
-  getConvenios(){
-    this.service.getConvenios().subscribe((data)=>{
-      this.convenios = data;
+  getPublicacao(){
+    this.service.getPublicacao().subscribe((data)=>{
+      this.publicacoes = data;
     console.log(data);
     },(erro)=>{
       console.log(erro);

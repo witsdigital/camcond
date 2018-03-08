@@ -1,12 +1,12 @@
 webpackJsonp([24],{
 
-/***/ 12:
+/***/ 10:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ServiceProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(77);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(149);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -30,14 +30,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var ServiceProvider = (function () {
     function ServiceProvider(http) {
         this.http = http;
-        this.api = 'http://www.meupainel.com.br/ted2/';
+        this.api = 'http://camaradecondeuba.ba.gov.br/';
         console.log('Hello ServiceProvider Provider');
     }
     ServiceProvider.prototype.getDicas = function () {
         return this.http.get(this.api + 'noticia/getappdicas').map(function (res) { return res.json(); });
     };
     ServiceProvider.prototype.getNoticias = function () {
-        return this.http.get(this.api + 'noticia/getappnews/').map(function (res) { return res.json(); });
+        return this.http.get(this.api + 'noticia/getall/').map(function (res) { return res.json(); });
+    };
+    ServiceProvider.prototype.getGaleria = function () {
+        return this.http.get(this.api + 'galeria/getapp/').map(function (res) { return res.json(); });
+    };
+    ServiceProvider.prototype.getTvCamara = function () {
+        return this.http.get(this.api + 'tv_camara/getapp/').map(function (res) { return res.json(); });
+    };
+    ServiceProvider.prototype.getVereadores = function () {
+        return this.http.get(this.api + 'vereadores/getVereadoresApp/').map(function (res) { return res.json(); });
+    };
+    ServiceProvider.prototype.getPublicacao = function () {
+        return this.http.get(this.api + 'publicacoes/getPublicacaoApp/').map(function (res) { return res.json(); });
     };
     ServiceProvider.prototype.getEspecialistas = function () {
         return this.http.get(this.api + 'especialista/getapp/').map(function (res) { return res.json(); });
@@ -55,13 +67,25 @@ var ServiceProvider = (function () {
         return this.http.get(this.api + 'exames/getappid/' + id).map(function (res) { return res.json(); });
     };
     ServiceProvider.prototype.getEventoImg = function (key) {
-        return this.http.get(this.api + 'eventos/getappimg/' + key).map(function (res) { return res.json(); });
+        return this.http.get(this.api + 'galeria/getappimg/' + key).map(function (res) { return res.json(); });
     };
     ServiceProvider.prototype.postDatas = function (credentials, type) {
         var _this = this;
         return new Promise(function (resolve, reject) {
             var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
             _this.http.post(_this.api + 'api/apiLogin.php', JSON.stringify(credentials), { headers: headers })
+                .subscribe(function (res) {
+                resolve(res.json());
+            }, function (err) {
+                reject(err);
+            });
+        });
+    };
+    ServiceProvider.prototype.getPublicacaoPDF = function (credentials) {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+            _this.http.post(_this.api + 'publicacoes/getPublicacaoPDF', JSON.stringify(credentials), { headers: headers })
                 .subscribe(function (res) {
                 resolve(res.json());
             }, function (err) {
@@ -137,12 +161,12 @@ ServiceProvider = __decorate([
 
 /***/ }),
 
-/***/ 125:
+/***/ 126:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DetalheCalendarioPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__providers_service_service__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__providers_service_service__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(3);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -189,7 +213,11 @@ var DetalheCalendarioPage = (function () {
 }());
 DetalheCalendarioPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
+<<<<<<< HEAD
         selector: 'page-detalhe-calendario',template:/*ion-inline-start:"C:\Users\Thiago\Documents\camaracondeuba\src\pages\detalhe-calendario\detalhe-calendario.html"*/'<!--\n  Generated template for the DetalheCalendarioPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header >\n\n  <ion-navbar color="primary">\n    <ion-title>Detalhe do agendamento</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <div >\n     Nome do medicamento: {{item.medicamento}}<br>\n     Data de inicio: {{item.data_inicio}}<br>\n     Horario de inicio: {{item.horario_inicio}}<br>\n     Intervalo entre uso da medicação: {{item.intervalo_uso}}<br>\n     Duração: {{item.duracao}} dias\n     <ion-item *ngFor="let p of event" (click)="openHorarios(p)">\n        {{p.data}}  \n      </ion-item>\n\n  </div>\n</ion-content>\n'/*ion-inline-end:"C:\Users\Thiago\Documents\camaracondeuba\src\pages\detalhe-calendario\detalhe-calendario.html"*/,
+=======
+        selector: 'page-detalhe-calendario',template:/*ion-inline-start:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\detalhe-calendario\detalhe-calendario.html"*/'<!--\n\n  Generated template for the DetalheCalendarioPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header >\n\n\n\n  <ion-navbar color="primary">\n\n    <ion-title>Detalhe do agendamento</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <div >\n\n     Nome do medicamento: {{item.medicamento}}<br>\n\n     Data de inicio: {{item.data_inicio}}<br>\n\n     Horario de inicio: {{item.horario_inicio}}<br>\n\n     Intervalo entre uso da medicação: {{item.intervalo_uso}}<br>\n\n     Duração: {{item.duracao}} dias\n\n     <ion-item *ngFor="let p of event" (click)="openHorarios(p)">\n\n        {{p.data}}  \n\n      </ion-item>\n\n\n\n  </div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\detalhe-calendario\detalhe-calendario.html"*/,
+>>>>>>> c2e28b6532dd7fb29f70ec7c7b56f30a7e2ff0fa
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__providers_service_service__["a" /* ServiceProvider */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["r" /* NavController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["s" /* NavParams */]])
 ], DetalheCalendarioPage);
@@ -198,6 +226,7 @@ DetalheCalendarioPage = __decorate([
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ 126:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -282,12 +311,14 @@ ChatPage = __decorate([
 
 /***/ }),
 
+=======
+>>>>>>> c2e28b6532dd7fb29f70ec7c7b56f30a7e2ff0fa
 /***/ 127:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ConveniosPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__providers_service_service__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__providers_service_service__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(3);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -314,20 +345,20 @@ var ConveniosPage = (function () {
         this.service = service;
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.convenios = this.getConvenios();
         var loader = this.loadingCtrl.create({
             content: "Aguarde...",
             duration: 1000
         });
         loader.present();
+        this.getPublicacao();
     }
     ConveniosPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad ConveniosPage');
     };
-    ConveniosPage.prototype.getConvenios = function () {
+    ConveniosPage.prototype.getPublicacao = function () {
         var _this = this;
-        this.service.getConvenios().subscribe(function (data) {
-            _this.convenios = data;
+        this.service.getPublicacao().subscribe(function (data) {
+            _this.publicacoes = data;
             console.log(data);
         }, function (erro) {
             console.log(erro);
@@ -337,7 +368,11 @@ var ConveniosPage = (function () {
 }());
 ConveniosPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
+<<<<<<< HEAD
         selector: 'page-convenios',template:/*ion-inline-start:"C:\Users\Thiago\Documents\camaracondeuba\src\pages\convenios\convenios.html"*/'<!--\n  Generated template for the ConveniosPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar color="primary">\n    <ion-title>Convenios</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-list>\n    <button ion-item *ngFor="let item of convenios"><img src="http://www.inebmed.com.br/{{item.imgtumb}}"></button>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"C:\Users\Thiago\Documents\camaracondeuba\src\pages\convenios\convenios.html"*/,
+=======
+        selector: 'page-convenios',template:/*ion-inline-start:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\convenios\convenios.html"*/'<!--\n\n  Generated template for the ConveniosPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar color="primary">\n\n    <ion-title>Convenios</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <ion-list>\n\n    <button ion-item *ngFor="let item of convenios"><img src="http://www.inebmed.com.br/{{item.imgtumb}}"></button>\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\convenios\convenios.html"*/,
+>>>>>>> c2e28b6532dd7fb29f70ec7c7b56f30a7e2ff0fa
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["n" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_0__providers_service_service__["a" /* ServiceProvider */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["r" /* NavController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["s" /* NavParams */]])
 ], ConveniosPage);
@@ -350,9 +385,10 @@ ConveniosPage = __decorate([
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DetalheEspecPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DetalheDicasPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_service_service__ = __webpack_require__(10);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -364,38 +400,54 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 /**
- * Generated class for the DetalheEspecPage page.
+ * Generated class for the DetalheDicasPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var DetalheEspecPage = (function () {
-    function DetalheEspecPage(loadingCtrl, navCtrl, navParams) {
+var DetalheDicasPage = (function () {
+    function DetalheDicasPage(service, loadingCtrl, navCtrl, navParams) {
+        this.service = service;
         this.loadingCtrl = loadingCtrl;
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.ct = navParams.get("ct");
         var loader = this.loadingCtrl.create({
             content: "Aguarde...",
             duration: 1000
         });
         loader.present();
-        this.ct = navParams.get("ct");
-        console.log(this.ct);
-        loader.dismiss();
+        this.getPublicacaoPDF();
     }
-    DetalheEspecPage.prototype.ionViewDidLoad = function () {
+    DetalheDicasPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad DetalheDicasPage');
     };
-    return DetalheEspecPage;
+    DetalheDicasPage.prototype.getPublicacaoPDF = function () {
+        var _this = this;
+        this.service.getPublicacaoPDF(this.ct.id).then(function (data) {
+            _this.dados = data;
+            console.log(data);
+        }, function (erro) {
+            console.log(erro);
+        });
+    };
+    return DetalheDicasPage;
 }());
-DetalheEspecPage = __decorate([
+DetalheDicasPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+<<<<<<< HEAD
         selector: 'page-detalhe-espec',template:/*ion-inline-start:"C:\Users\Thiago\Documents\camaracondeuba\src\pages\detalhe-espec\detalhe-espec.html"*/'<!--\n  Generated template for the DetalheEspecPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar color="primary">\n    <ion-title>Especialista</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n\n<div align="center" class="blocoimg">\n    <img class="imgespec" src="http://www.inebmed.com.br/{{ct.img}}"/>\n</div>\n<div align="center" class="detalhe">\n  <div class="nome-perfil" > {{ct.nome}}</div>\n  <div class="email-perfil" >  {{ct.especialidade}}</div>\n\n</div>\n\n<ion-row class="iconsaction">\n  <ion-col>\n      <a href="tel:{{ct.telefone}}" target="_self"> <img class="imgespec" src="assets/telephone.png"/></a>\n\n\n  </ion-col>\n  <ion-col>\n      <a href="mailto:{{ct.email}}" target="_self"> <img class="imgespec" src="assets/sendmail.png"/></a>\n\n  </ion-col>\n  <ion-col>\n  <img class="imgespec" src="assets/map.png"/>\n  </ion-col>\n\n</ion-row>\n\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\Thiago\Documents\camaracondeuba\src\pages\detalhe-espec\detalhe-espec.html"*/,
+=======
+        selector: 'page-detalhe-dicas',template:/*ion-inline-start:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\detalhe-dicas\detalhe-dicas.html"*/'<!--\n\n  Generated template for the DetalheDicasPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar color="danger">\n\n    <ion-title>Dica</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <h3>{{ct.titulo}}</h3>\n\n  <h4>{{ct.objeto}}</h4>\n\n  <h4 *ngFor="let p of dados">link: http://camaradecondeuba.ba.gov.br/uploads/publicadas/7/{{p.link}}</h4>\n\n  <ion-buttons *ngFor="let p of dados"><a href="http://camaradecondeuba.ba.gov.br/uploads/publicadas/7/{{p.link}}">Consultar</a></ion-buttons>\n\n</ion-content>\n\n\n\n'/*ion-inline-end:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\detalhe-dicas\detalhe-dicas.html"*/,
+>>>>>>> c2e28b6532dd7fb29f70ec7c7b56f30a7e2ff0fa
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["r" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* NavParams */]])
-], DetalheEspecPage);
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__providers_service_service__["a" /* ServiceProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_service_service__["a" /* ServiceProvider */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* LoadingController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["r" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["r" /* NavController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* NavParams */]) === "function" && _d || Object])
+], DetalheDicasPage);
 
-//# sourceMappingURL=detalhe-espec.js.map
+var _a, _b, _c, _d;
+//# sourceMappingURL=detalhe-dicas.js.map
 
 /***/ }),
 
@@ -404,7 +456,7 @@ DetalheEspecPage = __decorate([
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DetalheEventosPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__providers_service_service__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__providers_service_service__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(3);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -454,7 +506,11 @@ var DetalheEventosPage = (function () {
 }());
 DetalheEventosPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
+<<<<<<< HEAD
         selector: 'page-detalhe-eventos',template:/*ion-inline-start:"C:\Users\Thiago\Documents\camaracondeuba\src\pages\detalhe-eventos\detalhe-eventos.html"*/'<!--\n  Generated template for the DetalheEventosPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar color="primary">\n    <ion-title >Evento</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <div *ngFor="let img of evento">\n\n      <img class="detalhe-evento" src="{{img.src}}" imageViewer>\n\n  </div>\n</ion-content>\n'/*ion-inline-end:"C:\Users\Thiago\Documents\camaracondeuba\src\pages\detalhe-eventos\detalhe-eventos.html"*/,
+=======
+        selector: 'page-detalhe-eventos',template:/*ion-inline-start:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\detalhe-eventos\detalhe-eventos.html"*/'<!--\n\n  Generated template for the DetalheEventosPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar color="danger">\n\n    <ion-title >Evento</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <div *ngFor="let img of evento">\n\n\n\n      <img class="detalhe-evento" src="http://camaradecondeuba.ba.gov.br/uploads/galeria/{{img.arquivo}}" imageViewer>\n\n\n\n  </div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\detalhe-eventos\detalhe-eventos.html"*/,
+>>>>>>> c2e28b6532dd7fb29f70ec7c7b56f30a7e2ff0fa
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["n" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_0__providers_service_service__["a" /* ServiceProvider */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["r" /* NavController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["s" /* NavParams */]])
 ], DetalheEventosPage);
@@ -505,7 +561,11 @@ var DetalheExamePage = (function () {
 }());
 DetalheExamePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+<<<<<<< HEAD
         selector: 'page-detalhe-exame',template:/*ion-inline-start:"C:\Users\Thiago\Documents\camaracondeuba\src\pages\detalhe-exame\detalhe-exame.html"*/'<!--\n  Generated template for the DetalheExamePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>detalheExame</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\Thiago\Documents\camaracondeuba\src\pages\detalhe-exame\detalhe-exame.html"*/,
+=======
+        selector: 'page-detalhe-exame',template:/*ion-inline-start:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\detalhe-exame\detalhe-exame.html"*/'<!--\n\n  Generated template for the DetalheExamePage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>detalheExame</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\detalhe-exame\detalhe-exame.html"*/,
+>>>>>>> c2e28b6532dd7fb29f70ec7c7b56f30a7e2ff0fa
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["r" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* NavParams */]])
 ], DetalheExamePage);
@@ -550,7 +610,11 @@ var DetalheImcPage = (function () {
 }());
 DetalheImcPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+<<<<<<< HEAD
         selector: 'page-detalhe-imc',template:/*ion-inline-start:"C:\Users\Thiago\Documents\camaracondeuba\src\pages\detalhe-imc\detalhe-imc.html"*/'<!--\n  Generated template for the DetalheImcPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar color="primary">\n    <ion-title>Resultado</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content >\n\n  <div class="conteudo" *ngFor="let item of item">\n    <img src="{{item.img}}"><br><br>\n    <h1>Imc: {{item.imc | number:\'2.2\'}}</h1>\n    <p>{{item.mensagem}}</p>\n  </div>\n</ion-content>\n'/*ion-inline-end:"C:\Users\Thiago\Documents\camaracondeuba\src\pages\detalhe-imc\detalhe-imc.html"*/,
+=======
+        selector: 'page-detalhe-imc',template:/*ion-inline-start:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\detalhe-imc\detalhe-imc.html"*/'<!--\n\n  Generated template for the DetalheImcPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar color="primary">\n\n    <ion-title>Resultado</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content >\n\n\n\n  <div class="conteudo" *ngFor="let item of item">\n\n    <img src="{{item.img}}"><br><br>\n\n    <h1>Imc: {{item.imc | number:\'2.2\'}}</h1>\n\n    <p>{{item.mensagem}}</p>\n\n  </div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\detalhe-imc\detalhe-imc.html"*/,
+>>>>>>> c2e28b6532dd7fb29f70ec7c7b56f30a7e2ff0fa
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["r" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* NavParams */]])
 ], DetalheImcPage);
@@ -564,10 +628,10 @@ DetalheImcPage = __decorate([
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DicasPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__detalhe_not_detalhe_not__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_service_service__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__providers_service_service__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__detalhe_dicas_detalhe_dicas__ = __webpack_require__(128);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -587,37 +651,43 @@ var DicasPage = (function () {
         this.service = service;
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.dicas = this.getDicas();
         var loader = this.loadingCtrl.create({
             content: "Aguarde...",
             duration: 1000
         });
         loader.present();
+        this.getPublicacao();
     }
     DicasPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad NoticiasPage');
     };
-    DicasPage.prototype.getDicas = function () {
+    DicasPage.prototype.getPublicacao = function () {
         var _this = this;
-        this.service.getDicas().subscribe(function (data) {
-            _this.dicas = data;
+        this.service.getPublicacao().subscribe(function (data) {
+            _this.dados = data;
+            _this.publicacoes = _this.dados;
             console.log(data);
         }, function (erro) {
             console.log(erro);
         });
     };
     DicasPage.prototype.openPage = function (item) {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_0__detalhe_not_detalhe_not__["a" /* DetalheNotPage */], {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__detalhe_dicas_detalhe_dicas__["a" /* DetalheDicasPage */], {
             ct: item
         });
     };
     return DicasPage;
 }());
 DicasPage = __decorate([
+<<<<<<< HEAD
     Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
         selector: 'page-dicas',template:/*ion-inline-start:"C:\Users\Thiago\Documents\camaracondeuba\src\pages\dicas\dicas.html"*/'<!--\n  Generated template for the EspecialistasPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n    \n        <ion-navbar color="primary">\n            <ion-title>Dicas</ion-title>\n          </ion-navbar>\n    </ion-header>\n    \n    <ion-content class="home">\n\n\n\n<div class="" *ngIf="dicas && dicas.length">\n\n\n\n  <div class="slidepatro">\n    <div class="titcat">\n      Destaques\n    </div>\n\n    <ion-slides *ngIf="dicas && dicas.length" padding paginationType autoplay="3000" loop slidesPerView="3">\n      <ion-slide (click)="openPage(dest)" *ngFor="let dest of dicas | slice:0:5; let i=index">\n        <img src="http://www.inebmed.com.br/{{dest.imgtumb}}" />\n        <p class="titdest">{{dest.titulo | slice:0:30}}...</p>\n      </ion-slide>\n\n\n\n\n    </ion-slides>\n\n  </div>\n\n  <div class="titcat">\n    Todas notícias\n\n  </div>\n  <ion-list>\n    <ion-item text-wrap (click)="openPage(item)" *ngFor="let item of dicas | slice:5; let i=index">\n      <ion-avatar item-start>\n        <img class="imgavatar" src="http://www.inebmed.com.br/{{item.imgtumb}}" />\n      </ion-avatar>\n      <div class="titulonot">{{item.titulo}}</div>\n      <p>{{item.data}}</p>\n    </ion-item>\n  </ion-list>\n</div>\n\n\n      </ion-content>'/*ion-inline-end:"C:\Users\Thiago\Documents\camaracondeuba\src\pages\dicas\dicas.html"*/,
+=======
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
+        selector: 'page-dicas',template:/*ion-inline-start:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\dicas\dicas.html"*/'<!--\n\n  Generated template for the EspecialistasPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n    \n\n        <ion-navbar color="danger">\n\n            <ion-title>Dicas</ion-title>\n\n          </ion-navbar>\n\n    </ion-header>\n\n    \n\n    <ion-content>\n\n\n\n\n\n<ion-list>\n\n  <ion-item *ngFor="let p of publicacoes" (click)="openPage(p)">\n\n    {{p.titulo}}\n\n  </ion-item>\n\n</ion-list>\n\n\n\n    </ion-content>'/*ion-inline-end:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\dicas\dicas.html"*/,
+>>>>>>> c2e28b6532dd7fb29f70ec7c7b56f30a7e2ff0fa
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["n" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_1__providers_service_service__["a" /* ServiceProvider */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["r" /* NavController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["s" /* NavParams */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["n" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_0__providers_service_service__["a" /* ServiceProvider */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["r" /* NavController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["s" /* NavParams */]])
 ], DicasPage);
 
 //# sourceMappingURL=dicas.js.map
@@ -667,7 +737,11 @@ var EnderecoPage = (function () {
 }());
 EnderecoPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+<<<<<<< HEAD
         selector: 'page-endereco',template:/*ion-inline-start:"C:\Users\Thiago\Documents\camaracondeuba\src\pages\endereco\endereco.html"*/'<!--\n  Generated template for the EnderecoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar color="primary">\n    <ion-title>Endereço</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-list class="end">\n    <ion-item text-wrap><b>Endereço:</b><br> {{item.endereco}}</ion-item>\n    <ion-item><b>Bairro:</b><br> {{item.bairro}}</ion-item>\n    <ion-item><b>Cidade:</b><br> {{item.cidade}}</ion-item>\n    <ion-item><b>Telefone:</b><br> {{item.telefone}}</ion-item>\n    <ion-item><b>Email:</b><br> {{item.email}}</ion-item>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"C:\Users\Thiago\Documents\camaracondeuba\src\pages\endereco\endereco.html"*/,
+=======
+        selector: 'page-endereco',template:/*ion-inline-start:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\endereco\endereco.html"*/'<!--\n\n  Generated template for the EnderecoPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar color="primary">\n\n    <ion-title>Endereço</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <ion-list class="end">\n\n    <ion-item text-wrap><b>Endereço:</b><br> {{item.endereco}}</ion-item>\n\n    <ion-item><b>Bairro:</b><br> {{item.bairro}}</ion-item>\n\n    <ion-item><b>Cidade:</b><br> {{item.cidade}}</ion-item>\n\n    <ion-item><b>Telefone:</b><br> {{item.telefone}}</ion-item>\n\n    <ion-item><b>Email:</b><br> {{item.email}}</ion-item>\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\endereco\endereco.html"*/,
+>>>>>>> c2e28b6532dd7fb29f70ec7c7b56f30a7e2ff0fa
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["r" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* NavParams */]])
 ], EnderecoPage);
@@ -681,7 +755,7 @@ EnderecoPage = __decorate([
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EventCalendarioPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__providers_service_service__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__providers_service_service__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(3);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -746,7 +820,11 @@ var EventCalendarioPage = (function () {
 }());
 EventCalendarioPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
+<<<<<<< HEAD
         selector: 'page-event-calendario',template:/*ion-inline-start:"C:\Users\Thiago\Documents\camaracondeuba\src\pages\event-calendario\event-calendario.html"*/'<ion-header>\n    <ion-navbar color="primary">\n      <ion-buttons start>\n        <button ion-button icon-only (click)="cancel()">\n          <ion-icon name="close"></ion-icon>\n        </button>\n      </ion-buttons>\n      <ion-title>Agendar</ion-title>\n    </ion-navbar>\n  </ion-header>\n   \n  <ion-content>\n    <ion-list>\n      <ion-item>\n          <ion-label>Medicamento:</ion-label><br>\n        <ion-input type="text" placeholder="" [(ngModel)]="event.med"></ion-input>\n      </ion-item>\n\n      <br>\n      <ion-item>\n        <ion-label>Horario inicial:</ion-label><br>\n        <ion-datetime cancelText="Voltar" doneText="Ok" displayFormat="HH:mm:ss" pickerFormat="HH:mm:ss" [(ngModel)]="event.horario_inicio"></ion-datetime>\n      </ion-item>\n\n      <br>\n      <ion-item>\n          <ion-label>Intervalo entre o uso:</ion-label><br>\n          <ion-select placeholder="Intervalo entre o uso:" [(ngModel)]="event.intervalo_uso">\n              <ion-option value="01:00:00">01 hora</ion-option>\n              <ion-option value="02:00:00">02 horas</ion-option>\n              <ion-option value="03:00:00">03 horas</ion-option>\n              <ion-option value="04:00:00">04 horas</ion-option>\n              <ion-option value="05:00:00">05 horas</ion-option>\n              <ion-option value="06:00:00">06 horas</ion-option>\n              <ion-option value="07:00:00">07 horas</ion-option>\n              <ion-option value="08:00:00">08 horas</ion-option>\n              <ion-option value="09:00:00">09 horas</ion-option>\n              <ion-option value="10:00:00">10 horas</ion-option>\n              <ion-option value="11:00:00">11 horas</ion-option>\n              <ion-option value="12:00:00">12 horas</ion-option>\n            </ion-select>\n      </ion-item>\n\n        <br>\n      <ion-item>\n        <ion-label>Data de inicio:</ion-label><br>\n        <ion-datetime cancelText="Voltar" doneText="Ok" displayFormat="DD/MM/YYYY" pickerFormat="DD/MMM/YYYY" [(ngModel)]="event.data_inicio" [min]="minDate"></ion-datetime>\n      </ion-item>\n      <br>\n      <ion-item>\n        <ion-label>Duração em dias:</ion-label><br>\n        <ion-input type="tel" placeholder="" [(ngModel)]="event.duracao"></ion-input>\n      </ion-item>\n\n    </ion-list>\n    <br>\n    <button ion-button full icon-left [disabled]="!event.med ||!event.horario_inicio ||!event.data_inicio ||!event.intervalo_uso ||!event.duracao " (click)="save()">\n      <ion-icon name="checkmark"></ion-icon> Adicionar\n    </button>\n  </ion-content>'/*ion-inline-end:"C:\Users\Thiago\Documents\camaracondeuba\src\pages\event-calendario\event-calendario.html"*/,
+=======
+        selector: 'page-event-calendario',template:/*ion-inline-start:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\event-calendario\event-calendario.html"*/'<ion-header>\n\n    <ion-navbar color="primary">\n\n      <ion-buttons start>\n\n        <button ion-button icon-only (click)="cancel()">\n\n          <ion-icon name="close"></ion-icon>\n\n        </button>\n\n      </ion-buttons>\n\n      <ion-title>Agendar</ion-title>\n\n    </ion-navbar>\n\n  </ion-header>\n\n   \n\n  <ion-content>\n\n    <ion-list>\n\n      <ion-item>\n\n          <ion-label>Medicamento:</ion-label><br>\n\n        <ion-input type="text" placeholder="" [(ngModel)]="event.med"></ion-input>\n\n      </ion-item>\n\n\n\n      <br>\n\n      <ion-item>\n\n        <ion-label>Horario inicial:</ion-label><br>\n\n        <ion-datetime cancelText="Voltar" doneText="Ok" displayFormat="HH:mm:ss" pickerFormat="HH:mm:ss" [(ngModel)]="event.horario_inicio"></ion-datetime>\n\n      </ion-item>\n\n\n\n      <br>\n\n      <ion-item>\n\n          <ion-label>Intervalo entre o uso:</ion-label><br>\n\n          <ion-select placeholder="Intervalo entre o uso:" [(ngModel)]="event.intervalo_uso">\n\n              <ion-option value="01:00:00">01 hora</ion-option>\n\n              <ion-option value="02:00:00">02 horas</ion-option>\n\n              <ion-option value="03:00:00">03 horas</ion-option>\n\n              <ion-option value="04:00:00">04 horas</ion-option>\n\n              <ion-option value="05:00:00">05 horas</ion-option>\n\n              <ion-option value="06:00:00">06 horas</ion-option>\n\n              <ion-option value="07:00:00">07 horas</ion-option>\n\n              <ion-option value="08:00:00">08 horas</ion-option>\n\n              <ion-option value="09:00:00">09 horas</ion-option>\n\n              <ion-option value="10:00:00">10 horas</ion-option>\n\n              <ion-option value="11:00:00">11 horas</ion-option>\n\n              <ion-option value="12:00:00">12 horas</ion-option>\n\n            </ion-select>\n\n      </ion-item>\n\n\n\n        <br>\n\n      <ion-item>\n\n        <ion-label>Data de inicio:</ion-label><br>\n\n        <ion-datetime cancelText="Voltar" doneText="Ok" displayFormat="DD/MM/YYYY" pickerFormat="DD/MMM/YYYY" [(ngModel)]="event.data_inicio" [min]="minDate"></ion-datetime>\n\n      </ion-item>\n\n      <br>\n\n      <ion-item>\n\n        <ion-label>Duração em dias:</ion-label><br>\n\n        <ion-input type="tel" placeholder="" [(ngModel)]="event.duracao"></ion-input>\n\n      </ion-item>\n\n\n\n    </ion-list>\n\n    <br>\n\n    <button ion-button full icon-left [disabled]="!event.med ||!event.horario_inicio ||!event.data_inicio ||!event.intervalo_uso ||!event.duracao " (click)="save()">\n\n      <ion-icon name="checkmark"></ion-icon> Adicionar\n\n    </button>\n\n  </ion-content>'/*ion-inline-end:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\event-calendario\event-calendario.html"*/,
+>>>>>>> c2e28b6532dd7fb29f70ec7c7b56f30a7e2ff0fa
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__providers_service_service__["a" /* ServiceProvider */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["w" /* ToastController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["r" /* NavController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["s" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["y" /* ViewController */]])
 ], EventCalendarioPage);
@@ -760,7 +838,7 @@ EventCalendarioPage = __decorate([
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EventosPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__providers_service_service__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__providers_service_service__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__detalhe_eventos_detalhe_eventos__ = __webpack_require__(129);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(3);
@@ -789,7 +867,7 @@ var EventosPage = (function () {
         this.service = service;
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.eventos = this.getEventos();
+        this.eventos = this.getGaleria();
         var loader = this.loadingCtrl.create({
             content: "Aguarde...",
             duration: 1000
@@ -798,9 +876,9 @@ var EventosPage = (function () {
     }
     EventosPage.prototype.ionViewDidLoad = function () {
     };
-    EventosPage.prototype.getEventos = function () {
+    EventosPage.prototype.getGaleria = function () {
         var _this = this;
-        this.service.getEventos().subscribe(function (data) {
+        this.service.getGaleria().subscribe(function (data) {
             _this.eventos = data;
         }, function (erro) {
             console.log(erro);
@@ -815,7 +893,11 @@ var EventosPage = (function () {
 }());
 EventosPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
+<<<<<<< HEAD
         selector: 'page-eventos',template:/*ion-inline-start:"C:\Users\Thiago\Documents\camaracondeuba\src\pages\eventos\eventos.html"*/'<!--\n  Generated template for the EventosPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar color="primary">\n    <ion-title>Eventos</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content class="card-background-page">\n\n\n  <div *ngFor="let item of eventos" (click)=openPage(item)>\n    <ion-card>\n    <img src="assets/camera.jpg"/>\n    <div class="card-title">{{item.titulo}}</div>\n    <div class="card-subtitle">{{item.data | date:\'dd-MM-yyyy\'}}</div>\n  </ion-card>\n\n\n  </div>\n</ion-content>\n'/*ion-inline-end:"C:\Users\Thiago\Documents\camaracondeuba\src\pages\eventos\eventos.html"*/,
+=======
+        selector: 'page-eventos',template:/*ion-inline-start:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\eventos\eventos.html"*/'<!--\n\n  Generated template for the EventosPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar color="danger">\n\n    <ion-title>Galerias</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content class="card-background-page">\n\n\n\n\n\n  <div *ngFor="let item of eventos" (click)=openPage(item)>\n\n    <ion-card>\n\n    <img src="assets/camera.jpg"/>\n\n    <div class="card-title">{{item.titulo}}</div>\n\n    <div class="card-subtitle">{{item.data | date:\'dd-MM-yyyy\'}}</div>\n\n  </ion-card>\n\n\n\n\n\n  </div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\eventos\eventos.html"*/,
+>>>>>>> c2e28b6532dd7fb29f70ec7c7b56f30a7e2ff0fa
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["n" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_0__providers_service_service__["a" /* ServiceProvider */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["r" /* NavController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["s" /* NavParams */]])
 ], EventosPage);
@@ -830,7 +912,7 @@ EventosPage = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ExameListPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__detalhe_exame_detalhe_exame__ = __webpack_require__(130);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_service_service__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_service_service__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_document_viewer__ = __webpack_require__(191);
@@ -902,7 +984,11 @@ var ExameListPage = (function () {
 }());
 ExameListPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
+<<<<<<< HEAD
         selector: 'page-exame-list',template:/*ion-inline-start:"C:\Users\Thiago\Documents\camaracondeuba\src\pages\exame-list\exame-list.html"*/'<!--\n  Generated template for the ExameListPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar color="primary">\n    <ion-title>Lista de exames</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n  <ion-item>\n          <ion-label>Mês:</ion-label>\n          <ion-select interface="popover">\n            <ion-option value="Patologias" (ionSelect)="filtrar(1); pesquisa=\'\';">Janeiro</ion-option>\n            <ion-option value="fev" (ionSelect)="filtrar(2); pesquisa=\'\';">Fevereiro</ion-option>\n            <ion-option value="mar" (ionSelect)="filtrar(3); pesquisa=\'\';">Março</ion-option>\n            <ion-option value="abril" (ionSelect)="filtrar(4); pesquisa=\'\';">Abril</ion-option>\n            <ion-option value="mai" (ionSelect)="filtrar(5); pesquisa=\'\';">Maio</ion-option>\n            <ion-option value="jun" (ionSelect)="filtrar(6); pesquisa=\'\';">Junho</ion-option>\n            <ion-option value="jul" (ionSelect)="filtrar(7); pesquisa=\'\';">Julho</ion-option>\n            <ion-option value="ago" (ionSelect)="filtrar(8); pesquisa=\'\';">Agosto</ion-option>\n            <ion-option value="set" (ionSelect)="filtrar(9); pesquisa=\'\';">Setembro</ion-option>\n            <ion-option value="out" (ionSelect)="filtrar(10); pesquisa=\'\';">Outubro</ion-option>\n            <ion-option value="nov" (ionSelect)="filtrar(11); pesquisa=\'\';">Novembro</ion-option>\n            <ion-option value="dez" (ionSelect)="filtrar(12); pesquisa=\'\';">Dezembro</ion-option>\n\n          </ion-select>\n        </ion-item>\n<div *ngIf="exames" class="">\n      <ion-row>\n        <ion-col col-6 *ngFor="let p of exames" (click)="openFile(p.patch+\'/\'+p.arquivo)">\n          <ion-card *ngIf="p.mes == filtro">\n        <ion-card-header>\n      {{p.descricao}}\n        </ion-card-header>\n        <ion-card-content>\n          <img class="iconexame" src="assets/pdf.png" alt="">\n      <div class="itemdetalhe">\n           <ion-icon name="calendar"></ion-icon> {{p.data}}\n      </div>\n        </ion-card-content>\n      </ion-card>\n        </ion-col>\n      </ion-row>\n  </div>\n</ion-content>\n'/*ion-inline-end:"C:\Users\Thiago\Documents\camaracondeuba\src\pages\exame-list\exame-list.html"*/,
+=======
+        selector: 'page-exame-list',template:/*ion-inline-start:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\exame-list\exame-list.html"*/'<!--\n\n  Generated template for the ExameListPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar color="primary">\n\n    <ion-title>Lista de exames</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n  <ion-item>\n\n          <ion-label>Mês:</ion-label>\n\n          <ion-select interface="popover">\n\n            <ion-option value="Patologias" (ionSelect)="filtrar(1); pesquisa=\'\';">Janeiro</ion-option>\n\n            <ion-option value="fev" (ionSelect)="filtrar(2); pesquisa=\'\';">Fevereiro</ion-option>\n\n            <ion-option value="mar" (ionSelect)="filtrar(3); pesquisa=\'\';">Março</ion-option>\n\n            <ion-option value="abril" (ionSelect)="filtrar(4); pesquisa=\'\';">Abril</ion-option>\n\n            <ion-option value="mai" (ionSelect)="filtrar(5); pesquisa=\'\';">Maio</ion-option>\n\n            <ion-option value="jun" (ionSelect)="filtrar(6); pesquisa=\'\';">Junho</ion-option>\n\n            <ion-option value="jul" (ionSelect)="filtrar(7); pesquisa=\'\';">Julho</ion-option>\n\n            <ion-option value="ago" (ionSelect)="filtrar(8); pesquisa=\'\';">Agosto</ion-option>\n\n            <ion-option value="set" (ionSelect)="filtrar(9); pesquisa=\'\';">Setembro</ion-option>\n\n            <ion-option value="out" (ionSelect)="filtrar(10); pesquisa=\'\';">Outubro</ion-option>\n\n            <ion-option value="nov" (ionSelect)="filtrar(11); pesquisa=\'\';">Novembro</ion-option>\n\n            <ion-option value="dez" (ionSelect)="filtrar(12); pesquisa=\'\';">Dezembro</ion-option>\n\n\n\n          </ion-select>\n\n        </ion-item>\n\n<div *ngIf="exames" class="">\n\n      <ion-row>\n\n        <ion-col col-6 *ngFor="let p of exames" (click)="openFile(p.patch+\'/\'+p.arquivo)">\n\n          <ion-card *ngIf="p.mes == filtro">\n\n        <ion-card-header>\n\n      {{p.descricao}}\n\n        </ion-card-header>\n\n        <ion-card-content>\n\n          <img class="iconexame" src="assets/pdf.png" alt="">\n\n      <div class="itemdetalhe">\n\n           <ion-icon name="calendar"></ion-icon> {{p.data}}\n\n      </div>\n\n        </ion-card-content>\n\n      </ion-card>\n\n        </ion-col>\n\n      </ion-row>\n\n  </div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\exame-list\exame-list.html"*/,
+>>>>>>> c2e28b6532dd7fb29f70ec7c7b56f30a7e2ff0fa
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["n" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_4__ionic_native_document_viewer__["a" /* DocumentViewer */], __WEBPACK_IMPORTED_MODULE_1__providers_service_service__["a" /* ServiceProvider */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["r" /* NavController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["s" /* NavParams */]])
 ], ExameListPage);
@@ -948,7 +1034,11 @@ var OpenpdfPage = (function () {
 }());
 OpenpdfPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+<<<<<<< HEAD
         selector: 'page-openpdf',template:/*ion-inline-start:"C:\Users\Thiago\Documents\camaracondeuba\src\pages\openpdf\openpdf.html"*/'\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>openpdf</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n<div class="pdfload"><pdf-viewer [fit-to-page]="false" [src]="pdfSrc" [render-text]="true" [original-size]="true"></pdf-viewer></div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Thiago\Documents\camaracondeuba\src\pages\openpdf\openpdf.html"*/,
+=======
+        selector: 'page-openpdf',template:/*ion-inline-start:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\openpdf\openpdf.html"*/'\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>openpdf</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n<div class="pdfload"><pdf-viewer [fit-to-page]="false" [src]="pdfSrc" [render-text]="true" [original-size]="true"></pdf-viewer></div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\openpdf\openpdf.html"*/,
+>>>>>>> c2e28b6532dd7fb29f70ec7c7b56f30a7e2ff0fa
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["r" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* NavParams */]])
 ], OpenpdfPage);
@@ -964,7 +1054,7 @@ OpenpdfPage = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ExamePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_forms__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__home_home__ = __webpack_require__(48);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_service_service__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_service_service__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__ = __webpack_require__(149);
@@ -1043,7 +1133,11 @@ var ExamePage = (function () {
 }());
 ExamePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["Component"])({
+<<<<<<< HEAD
         selector: 'page-exame',template:/*ion-inline-start:"C:\Users\Thiago\Documents\camaracondeuba\src\pages\exame\exame.html"*/'<!--\n  Generated template for the ExamePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar color="primary">\n    <ion-title>Pré-agenda</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <div class="conteudo">\n  <ion-item><ion-input class="imput" [(ngModel)]="dados.nome" type="text" placeholder="Nome Completo *" required=""></ion-input></ion-item>\n  <ion-item><ion-input class="imput" [(ngModel)]="dados.cpf" type="tel" placeholder="CPF *" name="cpf"  required=""></ion-input></ion-item>\n  <ion-item><ion-input class="imput" [(ngModel)]="dados.email" type="email" placeholder="Email *" name="email"  required=""></ion-input></ion-item>\n  <ion-item><ion-input class="imput" [(ngModel)]="dados.telefone" type="tel" placeholder="Telefone *" name="telefone"  required=""></ion-input></ion-item>\n  <ion-item><ion-datetime displayFormat="DD/MM/YYYY" doneText="Ok" cancelText="Voltar" [(ngModel)]="dados.data" placeholder="Data *" required=""></ion-datetime></ion-item>\n  \n  <ion-item>\n  <ion-select class="imput1" [(ngModel)]="dados.sexo" name="sexo" placeholder="Genero">\n      <ion-option value="f">Feminino</ion-option>\n      <ion-option value="m">Masculino</ion-option>\n      <ion-option value="o">Outro</ion-option>\n    </ion-select>\n  </ion-item>\n  <ion-item>\n    <ion-select class="imput1" [(ngModel)]="dados.tp_consulta" name="tp_consulta" placeholder="Tipo de consulta">\n        <ion-option value="1">Plano de saúde</ion-option>\n        <ion-option value="2">Paticular</ion-option>\n      </ion-select>\n    </ion-item>\n    <ion-item>\n    <ion-select class="imput1" [(ngModel)]="dados.periodo" name="periodo" placeholder="Periodo Preferencial">\n        <ion-option value="0">Indiferente</ion-option>\n        <ion-option value="1">Manhã</ion-option>\n        <ion-option value="2">Tarde</ion-option>\n      </ion-select>\n    </ion-item>\n    \n<button class="entrar" (click)="cadastrarExame(dados)" ion-button color="secundary" [disabled]="!dados.nome ||!dados.data ||!dados.email ||!dados.telefone ||!dados.cpf ||!dados.sexo || !dados.periodo || !dados.tp_consulta" >Enviar</button>\n\n</div>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\Thiago\Documents\camaracondeuba\src\pages\exame\exame.html"*/,
+=======
+        selector: 'page-exame',template:/*ion-inline-start:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\exame\exame.html"*/'<!--\n\n  Generated template for the ExamePage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar color="primary">\n\n    <ion-title>Pré-agenda</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <div class="conteudo">\n\n  <ion-item><ion-input class="imput" [(ngModel)]="dados.nome" type="text" placeholder="Nome Completo *" required=""></ion-input></ion-item>\n\n  <ion-item><ion-input class="imput" [(ngModel)]="dados.cpf" type="tel" placeholder="CPF *" name="cpf"  required=""></ion-input></ion-item>\n\n  <ion-item><ion-input class="imput" [(ngModel)]="dados.email" type="email" placeholder="Email *" name="email"  required=""></ion-input></ion-item>\n\n  <ion-item><ion-input class="imput" [(ngModel)]="dados.telefone" type="tel" placeholder="Telefone *" name="telefone"  required=""></ion-input></ion-item>\n\n  <ion-item><ion-datetime displayFormat="DD/MM/YYYY" doneText="Ok" cancelText="Voltar" [(ngModel)]="dados.data" placeholder="Data *" required=""></ion-datetime></ion-item>\n\n  \n\n  <ion-item>\n\n  <ion-select class="imput1" [(ngModel)]="dados.sexo" name="sexo" placeholder="Genero">\n\n      <ion-option value="f">Feminino</ion-option>\n\n      <ion-option value="m">Masculino</ion-option>\n\n      <ion-option value="o">Outro</ion-option>\n\n    </ion-select>\n\n  </ion-item>\n\n  <ion-item>\n\n    <ion-select class="imput1" [(ngModel)]="dados.tp_consulta" name="tp_consulta" placeholder="Tipo de consulta">\n\n        <ion-option value="1">Plano de saúde</ion-option>\n\n        <ion-option value="2">Paticular</ion-option>\n\n      </ion-select>\n\n    </ion-item>\n\n    <ion-item>\n\n    <ion-select class="imput1" [(ngModel)]="dados.periodo" name="periodo" placeholder="Periodo Preferencial">\n\n        <ion-option value="0">Indiferente</ion-option>\n\n        <ion-option value="1">Manhã</ion-option>\n\n        <ion-option value="2">Tarde</ion-option>\n\n      </ion-select>\n\n    </ion-item>\n\n    \n\n<button class="entrar" (click)="cadastrarExame(dados)" ion-button color="secundary" [disabled]="!dados.nome ||!dados.data ||!dados.email ||!dados.telefone ||!dados.cpf ||!dados.sexo || !dados.periodo || !dados.tp_consulta" >Enviar</button>\n\n\n\n</div>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\exame\exame.html"*/,
+>>>>>>> c2e28b6532dd7fb29f70ec7c7b56f30a7e2ff0fa
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_forms__["a" /* FormBuilder */], __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["n" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["w" /* ToastController */], __WEBPACK_IMPORTED_MODULE_2__providers_service_service__["a" /* ServiceProvider */], __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["r" /* NavController */], __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["s" /* NavParams */]])
 ], ExamePage);
@@ -1375,7 +1469,11 @@ __decorate([
 ], LocalizacaoPage.prototype, "mapRef", void 0);
 LocalizacaoPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+<<<<<<< HEAD
         selector: 'page-localizacao',template:/*ion-inline-start:"C:\Users\Thiago\Documents\camaracondeuba\src\pages\localizacao\localizacao.html"*/'\n  <ion-header>\n      \n        <ion-navbar color="primary">\n          <ion-title>Localização</ion-title>\n        </ion-navbar>\n      \n      </ion-header>\n      \n      \n      <ion-content>\n          <div class="boxend">\n              <div  class="boend">\n            \n              {{endereco}}\n              </div>\n            </div>\n            <div id="map"></div>\n      </ion-content>\n      '/*ion-inline-end:"C:\Users\Thiago\Documents\camaracondeuba\src\pages\localizacao\localizacao.html"*/,
+=======
+        selector: 'page-localizacao',template:/*ion-inline-start:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\localizacao\localizacao.html"*/'\n\n  <ion-header>\n\n      \n\n        <ion-navbar color="primary">\n\n          <ion-title>Localização</ion-title>\n\n        </ion-navbar>\n\n      \n\n      </ion-header>\n\n      \n\n      \n\n      <ion-content>\n\n          <div class="boxend">\n\n              <div  class="boend">\n\n            \n\n              {{endereco}}\n\n              </div>\n\n            </div>\n\n            <div id="map"></div>\n\n      </ion-content>\n\n      '/*ion-inline-end:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\localizacao\localizacao.html"*/,
+>>>>>>> c2e28b6532dd7fb29f70ec7c7b56f30a7e2ff0fa
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__["a" /* Geolocation */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["r" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* NavParams */]])
 ], LocalizacaoPage);
@@ -1389,8 +1487,8 @@ LocalizacaoPage = __decorate([
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CalendarioPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__detalhe_calendario_detalhe_calendario__ = __webpack_require__(125);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_service_service__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__detalhe_calendario_detalhe_calendario__ = __webpack_require__(126);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_service_service__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__event_calendario_event_calendario__ = __webpack_require__(134);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(3);
@@ -1455,7 +1553,11 @@ var CalendarioPage = (function () {
 }());
 CalendarioPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["Component"])({
+<<<<<<< HEAD
         selector: 'page-calendario',template:/*ion-inline-start:"C:\Users\Thiago\Documents\camaracondeuba\src\pages\calendario\calendario.html"*/'<ion-header>\n    <ion-navbar color="primary">\n      <ion-title>\n        Medicamentos\n      </ion-title>\n\n    </ion-navbar>\n  </ion-header>\n   \n  <ion-content>\n            <ion-item *ngFor="let p of event" (click)="openHorarios(p)">\n              Medicamento: {{p.medicamento}}<br>\n                Data de inicio: {{p.data_inicio | date:\'dd-MM-yyyy\' }}<br>\n                 Intervalo de uso: {{p.intervalo_uso}}\n                \n            </ion-item>\n  </ion-content>\n  <ion-footer>\n    <div class="add">\n    <ion-buttons end>\n      <button ion-button icon-only (click)="addEvent()">\n        <ion-icon name="add"></ion-icon>\n      </button>\n    </ion-buttons>\n  </div>\n  </ion-footer>\n\n\n\n'/*ion-inline-end:"C:\Users\Thiago\Documents\camaracondeuba\src\pages\calendario\calendario.html"*/,
+=======
+        selector: 'page-calendario',template:/*ion-inline-start:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\calendario\calendario.html"*/'<ion-header>\n\n    <ion-navbar color="primary">\n\n      <ion-title>\n\n        Medicamentos\n\n      </ion-title>\n\n\n\n    </ion-navbar>\n\n  </ion-header>\n\n   \n\n  <ion-content>\n\n            <ion-item *ngFor="let p of event" (click)="openHorarios(p)">\n\n              Medicamento: {{p.medicamento}}<br>\n\n                Data de inicio: {{p.data_inicio | date:\'dd-MM-yyyy\' }}<br>\n\n                 Intervalo de uso: {{p.intervalo_uso}}\n\n                \n\n            </ion-item>\n\n  </ion-content>\n\n  <ion-footer>\n\n    <div class="add">\n\n    <ion-buttons end>\n\n      <button ion-button icon-only (click)="addEvent()">\n\n        <ion-icon name="add"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </div>\n\n  </ion-footer>\n\n\n\n\n\n\n\n'/*ion-inline-end:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\calendario\calendario.html"*/,
+>>>>>>> c2e28b6532dd7fb29f70ec7c7b56f30a7e2ff0fa
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__providers_service_service__["a" /* ServiceProvider */], __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["r" /* NavController */], __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["p" /* ModalController */], __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["a" /* AlertController */]])
 ], CalendarioPage);
@@ -1529,7 +1631,11 @@ var CalImcPage = (function () {
 }());
 CalImcPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
+<<<<<<< HEAD
         selector: 'page-cal-imc',template:/*ion-inline-start:"C:\Users\Thiago\Documents\camaracondeuba\src\pages\cal-imc\cal-imc.html"*/'<!--\n  Generated template for the CalImcPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar color="primary">\n    <ion-title>Calcular IMC</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n    <div class="conteudo">\n        <ion-item><ion-input class="imput" [(ngModel)]="dados.peso" type="tel" placeholder="Peso (Exemplo: 70.5)" required=""></ion-input></ion-item>\n        <ion-item><ion-input class="imput" [(ngModel)]="dados.altura" type="number" placeholder="Altura (Exemplo: 1.82)" name="altura"  required=""></ion-input></ion-item>\n\n      <button class="entrar" (click)="calcular(dados)" ion-button color="secundary" [disabled]="!dados.peso ||!dados.altura" >Calcular</button>\n\n      </div>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\Thiago\Documents\camaracondeuba\src\pages\cal-imc\cal-imc.html"*/,
+=======
+        selector: 'page-cal-imc',template:/*ion-inline-start:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\cal-imc\cal-imc.html"*/'<!--\n\n  Generated template for the CalImcPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar color="primary">\n\n    <ion-title>Calcular IMC</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n    <div class="conteudo">\n\n        <ion-item><ion-input class="imput" [(ngModel)]="dados.peso" type="tel" placeholder="Peso (Exemplo: 70.5)" required=""></ion-input></ion-item>\n\n        <ion-item><ion-input class="imput" [(ngModel)]="dados.altura" type="number" placeholder="Altura (Exemplo: 1.82)" name="altura"  required=""></ion-input></ion-item>\n\n\n\n      <button class="entrar" (click)="calcular(dados)" ion-button color="secundary" [disabled]="!dados.peso ||!dados.altura" >Calcular</button>\n\n\n\n      </div>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\cal-imc\cal-imc.html"*/,
+>>>>>>> c2e28b6532dd7fb29f70ec7c7b56f30a7e2ff0fa
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["r" /* NavController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["s" /* NavParams */]])
 ], CalImcPage);
@@ -1542,9 +1648,10 @@ CalImcPage = __decorate([
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DetalheDicasPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChatPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__providers_service_service__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(3);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1556,38 +1663,74 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 /**
- * Generated class for the DetalheDicasPage page.
+ * Generated class for the ChatPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var DetalheDicasPage = (function () {
-    function DetalheDicasPage(loadingCtrl, navCtrl, navParams) {
-        this.loadingCtrl = loadingCtrl;
-        this.navCtrl = navCtrl;
+var ChatPage = (function () {
+    function ChatPage(navParams, service, navCtrl) {
         this.navParams = navParams;
-        var loader = this.loadingCtrl.create({
-            content: "Aguarde...",
-            duration: 1000
-        });
-        loader.present();
-        this.ct = navParams.get("ct");
-        console.log(this.ct);
+        this.service = service;
+        this.navCtrl = navCtrl;
+        this.getMensagens();
+        this.user = JSON.parse(localStorage.getItem('userData'));
     }
-    DetalheDicasPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad DetalheDicasPage');
+    ChatPage.prototype.enviar = function () {
+        var m = {
+            texto: this.mensagem
+        };
+        console.log(m);
     };
-    return DetalheDicasPage;
+    ChatPage.prototype.enviarMensagem = function () {
+        var _this = this;
+        this.setmensagem = [
+            {
+                mensagem: this.mensagem,
+                data: new Date(),
+                id1: this.user[0].id_usuario,
+                id2: 4
+            }
+        ];
+        this.service.postMensagem(this.setmensagem[0]).then(function (result) {
+            _this.setmensagem = result;
+            if (_this.setmensagem.mensage == 1) {
+                console.log("sucesso");
+            }
+            else {
+                console.log("erro");
+            }
+        }, function (error) {
+        });
+    };
+    ChatPage.prototype.getMensagens = function () {
+        var _this = this;
+        setInterval(function () {
+            _this.service.getMensagens().subscribe(function (data) {
+                _this.lista = data;
+            }, function (erro) {
+                console.log(erro);
+            });
+        }, 500);
+    };
+    return ChatPage;
 }());
+<<<<<<< HEAD
 DetalheDicasPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'page-detalhe-dicas',template:/*ion-inline-start:"C:\Users\Thiago\Documents\camaracondeuba\src\pages\detalhe-dicas\detalhe-dicas.html"*/'<!--\n  Generated template for the DetalheDicasPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar color="primary">\n    <ion-title>Dica</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  \n</ion-content>\n'/*ion-inline-end:"C:\Users\Thiago\Documents\camaracondeuba\src\pages\detalhe-dicas\detalhe-dicas.html"*/,
+=======
+ChatPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
+        selector: 'page-chat',template:/*ion-inline-start:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\chat\chat.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>Atendimento</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-list>\n\n    <ion-item no-lines *ngFor="let item of lista">\n\n      <div class="position" *ngIf="item.id_user == user[0].id_usuario">\n\n        <p>{{item.mensagem}}</p>\n\n        <h6>{{item.data | date:\'HH:mm\'}}</h6>\n\n      </div>\n\n      <div class="position1" *ngIf="item.id_user != user[0].id_usuario">\n\n          <p>{{item.mensagem}}</p>\n\n          <h6>{{item.data | date:\'HH:mm\'}}</h6>\n\n        </div>\n\n    </ion-item>\n\n  </ion-list>\n\n</ion-content>\n\n\n\n<ion-footer>\n\n  <ion-toolbar>\n\n    <ion-item no-lines>\n\n    <ion-input type="text" (keyup.enter)="enviarMensagem(); mensagem=\'\'" [(ngModel)]="mensagem" placeholder="Mensagem"></ion-input>\n\n    <button ion-button item-right>\n\n    <ion-icon name="send" (click)="enviarMensagem(); mensagem=\'\'"></ion-icon>  \n\n  </button>  \n\n    </ion-item> \n\n  </ion-toolbar>\n\n</ion-footer>\n\n\n\n\n\n\n\n\n\n\n\n'/*ion-inline-end:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\chat\chat.html"*/,
+>>>>>>> c2e28b6532dd7fb29f70ec7c7b56f30a7e2ff0fa
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["r" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* NavParams */]])
-], DetalheDicasPage);
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["s" /* NavParams */], __WEBPACK_IMPORTED_MODULE_0__providers_service_service__["a" /* ServiceProvider */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["r" /* NavController */]])
+], ChatPage);
 
-//# sourceMappingURL=detalhe-dicas.js.map
+//# sourceMappingURL=chat.js.map
 
 /***/ }),
 
@@ -1610,7 +1753,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__pages_detalhe_calendario_detalhe_calendario__ = __webpack_require__(125);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__pages_detalhe_calendario_detalhe_calendario__ = __webpack_require__(126);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__pages_calendario_calendario__ = __webpack_require__(196);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_event_calendario_event_calendario__ = __webpack_require__(134);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic2_calendar__ = __webpack_require__(321);
@@ -1621,30 +1764,30 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__app_component__ = __webpack_require__(332);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_ionic_img_viewer__ = __webpack_require__(333);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__angular_http__ = __webpack_require__(76);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__providers_service_service__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__angular_http__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__providers_service_service__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_detalhe_imc_detalhe_imc__ = __webpack_require__(131);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_cal_imc_cal_imc__ = __webpack_require__(197);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_detalhe_exame_detalhe_exame__ = __webpack_require__(130);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_get_unidades_get_unidades__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_get_unidades_get_unidades__ = __webpack_require__(67);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_detalhe_eventos_detalhe_eventos__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_detalhe_dicas_detalhe_dicas__ = __webpack_require__(256);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_detalhe_dicas_detalhe_dicas__ = __webpack_require__(128);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_exame_list_exame_list__ = __webpack_require__(136);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_endereco_endereco__ = __webpack_require__(133);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_chat_chat__ = __webpack_require__(126);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_detalhe_not_detalhe_not__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_chat_chat__ = __webpack_require__(256);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_detalhe_not_detalhe_not__ = __webpack_require__(65);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_exame_exame__ = __webpack_require__(138);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_localizacao_localizacao__ = __webpack_require__(193);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_detalhe_espec_detalhe_espec__ = __webpack_require__(128);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_login_login__ = __webpack_require__(68);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_detalhe_espec_detalhe_espec__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_login_login__ = __webpack_require__(69);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_convenios_convenios__ = __webpack_require__(127);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_dicas_dicas__ = __webpack_require__(132);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__pages_unidades_unidades__ = __webpack_require__(67);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__pages_unidades_unidades__ = __webpack_require__(68);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__pages_eventos_eventos__ = __webpack_require__(135);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__pages_perfil_perfil__ = __webpack_require__(69);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__pages_noticias_noticias__ = __webpack_require__(70);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__pages_saude_saude__ = __webpack_require__(71);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__pages_especialistas_especialistas__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__pages_perfil_perfil__ = __webpack_require__(70);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__pages_noticias_noticias__ = __webpack_require__(71);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__pages_saude_saude__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__pages_especialistas_especialistas__ = __webpack_require__(66);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__pages_home_home__ = __webpack_require__(48);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__ionic_native_status_bar__ = __webpack_require__(239);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__ionic_native_splash_screen__ = __webpack_require__(240);
@@ -1832,17 +1975,17 @@ AppModule = __decorate([
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__pages_perfil_perfil__ = __webpack_require__(69);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__pages_login_login__ = __webpack_require__(68);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_unidades_unidades__ = __webpack_require__(67);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__pages_perfil_perfil__ = __webpack_require__(70);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__pages_login_login__ = __webpack_require__(69);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_unidades_unidades__ = __webpack_require__(68);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_status_bar__ = __webpack_require__(239);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_splash_screen__ = __webpack_require__(240);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_convenios_convenios__ = __webpack_require__(127);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_saude_saude__ = __webpack_require__(71);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_especialistas_especialistas__ = __webpack_require__(65);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_noticias_noticias__ = __webpack_require__(70);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_saude_saude__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_especialistas_especialistas__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_noticias_noticias__ = __webpack_require__(71);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_home_home__ = __webpack_require__(48);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1929,7 +2072,11 @@ __decorate([
     __metadata("design:type", __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["q" /* Nav */])
 ], MyApp.prototype, "nav", void 0);
 MyApp = __decorate([
+<<<<<<< HEAD
     Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["Component"])({template:/*ion-inline-start:"C:\Users\Thiago\Documents\camaracondeuba\src\app\app.html"*/'\n\n\n\n\n\n<ion-menu [content]="mycontent" id="menu2" >\n\n    <ion-content class="menu">\n\n        <div *ngIf="user"  class="boxmenu">\n\n            <img src="http://www.inebmed.com.br/{{dadosUser.imgtumb}}">\n\n            <h3>{{dadosUser.nome}}</h3>\n\n            <h4>{{dadosUser.email}}</h4>\n\n        </div>\n\n        <ion-list no-lines>\n\n            <button ion-item class="item-menu" *ngFor="let p of perfil" (click)="openPages(p)" menuClose>\n\n                    <ion-icon name="home"> {{p.title}}</ion-icon>\n\n            </button>\n\n            <button ion-item class="item-menu" *ngFor="let p of home" (click)="openPages(p)" menuClose>\n\n               <ion-icon name="home"> {{p.title}}</ion-icon>\n\n            </button>\n\n            <button ion-item  class="item-menu" *ngFor="let p of noticias" (click)="openPagesPush(p)" menuClose>\n\n                    <ion-icon name="information-circle"> {{p.title}} </ion-icon>\n\n            </button>\n\n            <button ion-item class="item-menu" *ngFor="let p of especialistas" (click)="openPagesPush(p)" menuClose>\n\n                    <ion-icon name="contact"> {{p.title}}</ion-icon>\n\n            </button>\n\n            <button ion-item class="item-menu" *ngFor="let p of unidades" (click)="openPagesPush(p)" menuClose>\n\n                <ion-icon name="briefcase"> {{p.title}}</ion-icon>\n\n            </button>\n\n            <button ion-item class="item-menu" *ngFor="let p of saude" (click)="openPagesPush(p)" menuClose>\n\n                    <ion-icon name="medkit"> {{p.title}}</ion-icon>\n\n            </button>\n\n            <button ion-item class="item-menu" *ngFor="let p of convenios" (click)="openPagesPush(p)" menuClose>\n\n                <ion-icon name="contacts"> {{p.title}}</ion-icon>\n\n            </button>\n\n            <button *ngIf="user" ion-item class="item-menu" (click)="sair()" menuClose>\n\n                <ion-icon name="close"> Sair</ion-icon>\n\n            </button>\n\n            <div class="" *ngIf="!user">\n\n\n\n              <button  ion-item class="item-menu" *ngFor="let p of login" (click)="openPagesPush(p)" menuClose>\n\n                  <ion-icon name="lock"> {{p.title}}</ion-icon>\n\n              </button>\n\n            </div>\n\n\n\n            <ion-item>Feedback</ion-item>\n\n\n\n        </ion-list>\n\n    </ion-content>\n\n</ion-menu>\n\n\n\n\n\n<ion-nav #mycontent [root]="rootPage"></ion-nav>\n\n'/*ion-inline-end:"C:\Users\Thiago\Documents\camaracondeuba\src\app\app.html"*/
+=======
+    Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["Component"])({template:/*ion-inline-start:"C:\Users\gian_\Desktop\projeto\camcond\src\app\app.html"*/'\n\n\n\n\n\n<ion-menu [content]="mycontent" id="menu2" >\n\n    <ion-content class="menu">\n\n        <div *ngIf="user"  class="boxmenu">\n\n            <img src="http://www.inebmed.com.br/{{dadosUser.imgtumb}}">\n\n            <h3>{{dadosUser.nome}}</h3>\n\n            <h4>{{dadosUser.email}}</h4>\n\n        </div>\n\n        <ion-list no-lines>\n\n            <button ion-item class="item-menu" *ngFor="let p of perfil" (click)="openPages(p)" menuClose>\n\n                    <ion-icon name="home"> {{p.title}}</ion-icon>\n\n            </button>\n\n            <button ion-item class="item-menu" *ngFor="let p of home" (click)="openPages(p)" menuClose>\n\n               <ion-icon name="home"> {{p.title}}</ion-icon>\n\n            </button>\n\n            <button ion-item  class="item-menu" *ngFor="let p of noticias" (click)="openPagesPush(p)" menuClose>\n\n                    <ion-icon name="information-circle"> {{p.title}} </ion-icon>\n\n            </button>\n\n            <button ion-item class="item-menu" *ngFor="let p of especialistas" (click)="openPagesPush(p)" menuClose>\n\n                    <ion-icon name="contact"> {{p.title}}</ion-icon>\n\n            </button>\n\n            <button ion-item class="item-menu" *ngFor="let p of unidades" (click)="openPagesPush(p)" menuClose>\n\n                <ion-icon name="briefcase"> {{p.title}}</ion-icon>\n\n            </button>\n\n            <button ion-item class="item-menu" *ngFor="let p of saude" (click)="openPagesPush(p)" menuClose>\n\n                    <ion-icon name="medkit"> {{p.title}}</ion-icon>\n\n            </button>\n\n            <button ion-item class="item-menu" *ngFor="let p of convenios" (click)="openPagesPush(p)" menuClose>\n\n                <ion-icon name="contacts"> {{p.title}}</ion-icon>\n\n            </button>\n\n            <button *ngIf="user" ion-item class="item-menu" (click)="sair()" menuClose>\n\n                <ion-icon name="close"> Sair</ion-icon>\n\n            </button>\n\n            <div class="" *ngIf="!user">\n\n\n\n              <button  ion-item class="item-menu" *ngFor="let p of login" (click)="openPagesPush(p)" menuClose>\n\n                  <ion-icon name="lock"> {{p.title}}</ion-icon>\n\n              </button>\n\n            </div>\n\n\n\n            <ion-item>Feedback</ion-item>\n\n\n\n        </ion-list>\n\n    </ion-content>\n\n</ion-menu>\n\n\n\n\n\n<ion-nav #mycontent [root]="rootPage"></ion-nav>\n\n'/*ion-inline-end:"C:\Users\gian_\Desktop\projeto\camcond\src\app\app.html"*/
+>>>>>>> c2e28b6532dd7fb29f70ec7c7b56f30a7e2ff0fa
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["u" /* Platform */], __WEBPACK_IMPORTED_MODULE_5__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_6__ionic_native_splash_screen__["a" /* SplashScreen */]])
 ], MyApp);
@@ -1971,19 +2118,21 @@ MyApp = __decorate([
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__get_unidades_get_unidades__ = __webpack_require__(66);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__exame_exame__ = __webpack_require__(138);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login_login__ = __webpack_require__(68);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__eventos_eventos__ = __webpack_require__(135);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__dicas_dicas__ = __webpack_require__(132);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__perfil_perfil__ = __webpack_require__(69);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__noticias_noticias__ = __webpack_require__(70);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__especialistas_especialistas__ = __webpack_require__(65);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__saude_saude__ = __webpack_require__(71);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__exame_list_exame_list__ = __webpack_require__(136);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_network__ = __webpack_require__(198);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__detalhe_not_detalhe_not__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_service_service__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__get_unidades_get_unidades__ = __webpack_require__(67);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__exame_exame__ = __webpack_require__(138);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__login_login__ = __webpack_require__(69);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__eventos_eventos__ = __webpack_require__(135);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__dicas_dicas__ = __webpack_require__(132);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__perfil_perfil__ = __webpack_require__(70);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__noticias_noticias__ = __webpack_require__(71);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__especialistas_especialistas__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__saude_saude__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__exame_list_exame_list__ = __webpack_require__(136);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_ionic_angular__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ionic_native_network__ = __webpack_require__(198);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2006,51 +2155,50 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var HomePage = (function () {
-    function HomePage(modalCtrl, toastCtrl, network, navCtrl, menuCtrl) {
+    function HomePage(service, modalCtrl, toastCtrl, network, navCtrl, menuCtrl) {
         var _this = this;
+        this.service = service;
         this.modalCtrl = modalCtrl;
         this.toastCtrl = toastCtrl;
         this.network = network;
         this.navCtrl = navCtrl;
         this.menuCtrl = menuCtrl;
         this.status = [];
+        this.getNoticias();
+        console.log(this.dados);
         this.menu = 'ferramentas';
-        if (localStorage.getItem('userData')) {
-            this.user = true;
-        }
-        else {
-            this.user = false;
-        }
         this.perfil = [
-            { title: "Perfil", component: __WEBPACK_IMPORTED_MODULE_5__perfil_perfil__["a" /* PerfilPage */] }
+            { title: "Perfil", component: __WEBPACK_IMPORTED_MODULE_7__perfil_perfil__["a" /* PerfilPage */] }
         ];
         this.unidades = [
-            { title: "Unidades", component: __WEBPACK_IMPORTED_MODULE_0__get_unidades_get_unidades__["a" /* GetUnidadesPage */] }
+            { title: "Unidades", component: __WEBPACK_IMPORTED_MODULE_2__get_unidades_get_unidades__["a" /* GetUnidadesPage */] }
         ];
         this.dicas = [
-            { title: "Dicas", component: __WEBPACK_IMPORTED_MODULE_4__dicas_dicas__["a" /* DicasPage */] }
+            { title: "Dicas", component: __WEBPACK_IMPORTED_MODULE_6__dicas_dicas__["a" /* DicasPage */] }
         ];
         this.noticias = [
-            { title: "noticias", component: __WEBPACK_IMPORTED_MODULE_6__noticias_noticias__["a" /* NoticiasPage */] }
+            { title: "noticias", component: __WEBPACK_IMPORTED_MODULE_8__noticias_noticias__["a" /* NoticiasPage */] }
         ];
         this.eventos = [
-            { title: "Eventos", component: __WEBPACK_IMPORTED_MODULE_3__eventos_eventos__["a" /* EventosPage */] }
+            { title: "Eventos", component: __WEBPACK_IMPORTED_MODULE_5__eventos_eventos__["a" /* EventosPage */] }
         ];
         this.saude = [
-            { title: "Saude", component: __WEBPACK_IMPORTED_MODULE_8__saude_saude__["a" /* SaudePage */] }
+            { title: "Saude", component: __WEBPACK_IMPORTED_MODULE_10__saude_saude__["a" /* SaudePage */] }
         ];
         this.especialistas = [
-            { title: "Especialistas", component: __WEBPACK_IMPORTED_MODULE_7__especialistas_especialistas__["a" /* EspecialistasPage */] }
+            { title: "Especialistas", component: __WEBPACK_IMPORTED_MODULE_9__especialistas_especialistas__["a" /* EspecialistasPage */] }
         ];
         this.login = [
-            { title: "Login", component: __WEBPACK_IMPORTED_MODULE_2__login_login__["a" /* LoginPage */] }
+            { title: "Login", component: __WEBPACK_IMPORTED_MODULE_4__login_login__["a" /* LoginPage */] }
         ];
         this.exame = [
-            { title: "Exame", component: __WEBPACK_IMPORTED_MODULE_1__exame_exame__["a" /* ExamePage */] }
+            { title: "Exame", component: __WEBPACK_IMPORTED_MODULE_3__exame_exame__["a" /* ExamePage */] }
         ];
         this.exameList = [
-            { title: "Exames", component: __WEBPACK_IMPORTED_MODULE_9__exame_list_exame_list__["a" /* ExameListPage */] }
+            { title: "Exames", component: __WEBPACK_IMPORTED_MODULE_11__exame_list_exame_list__["a" /* ExameListPage */] }
         ];
         this.network.onDisconnect().subscribe(function () {
             var toast = _this.toastCtrl.create({
@@ -2080,42 +2228,44 @@ var HomePage = (function () {
             }, 3000);
         });
     }
+    HomePage.prototype.getNoticias = function () {
+        var _this = this;
+        this.service.getNoticias().subscribe(function (data) {
+            _this.dados = data;
+        }, function (erro) {
+            console.log(erro);
+        });
+    };
     HomePage.prototype.openMenu = function () {
         this.menuCtrl.enable(true, 'menu1');
         this.menuCtrl.open();
     };
+    HomePage.prototype.openPage = function (item) {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_0__detalhe_not_detalhe_not__["a" /* DetalheNotPage */], {
+            ct: item
+        });
+    };
     HomePage.prototype.openlogin = function () {
-        var modal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_2__login_login__["a" /* LoginPage */]);
+        var modal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_4__login_login__["a" /* LoginPage */]);
         modal.onDidDismiss(function (data) {
         });
         modal.present();
     };
     HomePage.prototype.openPages = function (page) {
-        if (page.component == __WEBPACK_IMPORTED_MODULE_5__perfil_perfil__["a" /* PerfilPage */]) {
-            if (localStorage.getItem('userData')) {
-                this.navCtrl.push(page.component);
-            }
-            else {
-                var toast = this.toastCtrl.create({
-                    message: 'Você não esta logado',
-                    duration: 3000,
-                    position: 'top',
-                    cssClass: "toast-error"
-                });
-                toast.present();
-            }
-        }
-        else {
-            this.navCtrl.push(page.component);
-        }
+        this.navCtrl.push(page.component);
     };
     return HomePage;
 }());
 HomePage = __decorate([
+<<<<<<< HEAD
     Object(__WEBPACK_IMPORTED_MODULE_10__angular_core__["Component"])({
         selector: 'page-home',template:/*ion-inline-start:"C:\Users\Thiago\Documents\camaracondeuba\src\pages\home\home.html"*/'<ion-header>\n\n  <ion-toolbar color="danger">\n\n    <img width="100%" src="assets/menu/logo.png" alt="">\n\n\n\n\n\n  </ion-toolbar>\n\n</ion-header>\n\n\n\n<ion-content class="home">\n\n\n\n\n\n  <div class="slide">\n\n    <ion-slides autoplayDisableOnInteraction="false" autoplay="3000" loop="true" speed="1000" pager>\n\n\n\n      <ion-slide>\n\n        <img src="http://camaradecondeuba.ba.gov.br/uploads/destaque.png" alt="">\n\n      </ion-slide>\n\n\n\n\n\n    </ion-slides>\n\n\n\n  </div>\n\n\n\n  <div padding>\n\n    <ion-segment color="danger" [(ngModel)]="menu">\n\n      <ion-segment-button value="ferramentas">\n\n        Utilidades\n\n      </ion-segment-button>\n\n      <ion-segment-button value="news">\n\n        Notícias\n\n      </ion-segment-button>\n\n    </ion-segment>\n\n  </div>\n\n\n\n  <div [ngSwitch]="menu">\n\n    <ion-list *ngSwitchCase="\'news\'">\n\n      <ion-item>\n\n        <ion-thumbnail item-start>\n\n          <img src="img/thumbnail-puppy-1.jpg">\n\n        </ion-thumbnail>\n\n        <h2>Notícias</h2>\n\n      </ion-item>\n\n      ...\n\n    </ion-list>\n\n\n\n    <ion-list class="boxicons" *ngSwitchCase="\'ferramentas\'">\n\n      <ion-row class="menuicones">\n\n        <ion-col col-4>\n\n          <div *ngFor="let p of perfil" class="">\n\n            <img (click)="openPages(p)" src="assets/menu/user.png" alt="">\n\n          </div>\n\n        </ion-col>\n\n        <ion-col col-4>\n\n          <div *ngFor="let p of perfil" class="">\n\n            <img (click)="openPages(p)" src="assets/menu/vereadores.png" alt="">\n\n          </div>\n\n        </ion-col>\n\n        <ion-col col-4>\n\n          <div *ngFor="let p of perfil" class="">\n\n            <img (click)="openPages(p)" src="assets/menu/ouvidoria.png" alt="">\n\n          </div>\n\n        </ion-col>\n\n      </ion-row>\n\n      <ion-row class="menuicones">\n\n        <ion-col col-4>\n\n          <div *ngFor="let p of perfil" class="">\n\n            <img (click)="openPages(p)" src="assets/menu/transparencia.png" alt="">\n\n          </div>\n\n        </ion-col>\n\n        <ion-col col-4>\n\n          <div *ngFor="let p of perfil" class="">\n\n            <img (click)="openPages(p)" src="assets/menu/transmissoes.png" alt="">\n\n          </div>\n\n        </ion-col>\n\n        <ion-col col-4>\n\n          <div *ngFor="let p of perfil" class="">\n\n            <img (click)="openPages(p)" src="assets/menu/galerias.png" alt="">\n\n          </div>\n\n        </ion-col>\n\n      </ion-row>\n\n\n\n\n\n    </ion-list>\n\n  </div>\n\n\n\n\n\n\n\n\n\n\n\n</ion-content>\n\n<ion-footer>\n\n  <img class="imgwits" src="assets/logow.png" />\n\n</ion-footer>'/*ion-inline-end:"C:\Users\Thiago\Documents\camaracondeuba\src\pages\home\home.html"*/
+=======
+    Object(__WEBPACK_IMPORTED_MODULE_12__angular_core__["Component"])({
+        selector: 'page-home',template:/*ion-inline-start:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\home\home.html"*/'<ion-header>\n\n  <ion-toolbar color="danger">\n\n    <img width="100%" src="assets/menu/logo.png" alt="">\n\n\n\n\n\n  </ion-toolbar>\n\n</ion-header>\n\n\n\n<ion-content class="home">\n\n\n\n\n\n  <div class="slide">\n\n      <ion-slides *ngIf="dados && dados.length" autoplay="5000" class="slideroption" pager="true"   loop="true" speed="300">\n\n\n\n     <div *ngFor="let item of dados | slice:0:1"> \n\n      <ion-slide>\n\n          <img src="http://camaradecondeuba.ba.gov.br/uploads/destaque.png" alt="">\n\n      </ion-slide>\n\n    </div>\n\n\n\n    </ion-slides>\n\n\n\n  </div>\n\n\n\n  <div padding>\n\n    <ion-segment color="danger" [(ngModel)]="menu">\n\n      <ion-segment-button value="ferramentas">\n\n        Utilidades\n\n      </ion-segment-button>\n\n      <ion-segment-button value="news">\n\n        Notícias\n\n      </ion-segment-button>\n\n    </ion-segment>\n\n  </div>\n\n\n\n  <div [ngSwitch]="menu">\n\n    <ion-list *ngSwitchCase="\'news\'">\n\n      <ion-item>\n\n        <ion-thumbnail item-start>\n\n          <img src="img/thumbnail-puppy-1.jpg">\n\n        </ion-thumbnail>\n\n        <h2>Notícias</h2>\n\n      </ion-item>\n\n      <ion-item *ngFor="let item of dados | slice:0:10" (click)="openPage(item)">\n\n        {{item.titulo}}\n\n      </ion-item>\n\n      <ion-item *ngFor="let p of noticias">\n\n        <ion-buttons>\n\n          <div (click)="openPages(p)">Ver todas</div>\n\n        </ion-buttons>\n\n      </ion-item>\n\n    </ion-list>\n\n\n\n    <ion-list class="boxicons" *ngSwitchCase="\'ferramentas\'">\n\n      <ion-row class="menuicones">\n\n        <ion-col col-4>\n\n          <div *ngFor="let p of perfil" class="">\n\n            <img (click)="openPages(p)" src="assets/menu/user.png" alt="">\n\n          </div>\n\n        </ion-col>\n\n        <ion-col col-4>\n\n          <div *ngFor="let p of perfil" class="">\n\n            <img (click)="openPages(p)" src="assets/menu/vereadores.png" alt="">\n\n          </div>\n\n        </ion-col>\n\n        <ion-col col-4>\n\n          <div *ngFor="let p of perfil" class="">\n\n            <img (click)="openPages(p)" src="assets/menu/ouvidoria.png" alt="">\n\n          </div>\n\n        </ion-col>\n\n      </ion-row>\n\n      <ion-row class="menuicones">\n\n        <ion-col col-4>\n\n          <div *ngFor="let p of dicas" class="">\n\n            <img (click)="openPages(p)" src="assets/menu/transparencia.png" alt="">\n\n          </div>\n\n        </ion-col>\n\n        <ion-col col-4>\n\n          <div *ngFor="let p of saude" class="">\n\n            <img (click)="openPages(p)" src="assets/menu/transmissoes.png" alt="">\n\n          </div>\n\n        </ion-col>\n\n        <ion-col col-4>\n\n          <div *ngFor="let p of eventos" class="">\n\n            <img (click)="openPages(p)" src="assets/menu/galerias.png" alt="">\n\n          </div>\n\n        </ion-col>\n\n      </ion-row>\n\n\n\n\n\n    </ion-list>\n\n  </div>\n\n\n\n\n\n\n\n\n\n\n\n</ion-content>\n\n<ion-footer>\n\n  <img class="imgwits" src="assets/logow.png" />\n\n</ion-footer>'/*ion-inline-end:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\home\home.html"*/
+>>>>>>> c2e28b6532dd7fb29f70ec7c7b56f30a7e2ff0fa
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_11_ionic_angular__["p" /* ModalController */], __WEBPACK_IMPORTED_MODULE_11_ionic_angular__["w" /* ToastController */], __WEBPACK_IMPORTED_MODULE_12__ionic_native_network__["a" /* Network */], __WEBPACK_IMPORTED_MODULE_11_ionic_angular__["r" /* NavController */], __WEBPACK_IMPORTED_MODULE_11_ionic_angular__["o" /* MenuController */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__providers_service_service__["a" /* ServiceProvider */], __WEBPACK_IMPORTED_MODULE_13_ionic_angular__["p" /* ModalController */], __WEBPACK_IMPORTED_MODULE_13_ionic_angular__["w" /* ToastController */], __WEBPACK_IMPORTED_MODULE_14__ionic_native_network__["a" /* Network */], __WEBPACK_IMPORTED_MODULE_13_ionic_angular__["r" /* NavController */], __WEBPACK_IMPORTED_MODULE_13_ionic_angular__["o" /* MenuController */]])
 ], HomePage);
 
 //# sourceMappingURL=home.js.map
@@ -2123,6 +2273,59 @@ HomePage = __decorate([
 /***/ }),
 
 /***/ 64:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DetalheEspecPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the DetalheEspecPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var DetalheEspecPage = (function () {
+    function DetalheEspecPage(loadingCtrl, navCtrl, navParams) {
+        this.loadingCtrl = loadingCtrl;
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        var loader = this.loadingCtrl.create({
+            content: "Aguarde...",
+            duration: 1000
+        });
+        loader.present();
+        this.ct = navParams.get("ct");
+        console.log(this.ct);
+        loader.dismiss();
+    }
+    DetalheEspecPage.prototype.ionViewDidLoad = function () {
+    };
+    return DetalheEspecPage;
+}());
+DetalheEspecPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'page-detalhe-espec',template:/*ion-inline-start:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\detalhe-espec\detalhe-espec.html"*/'<!--\n\n  Generated template for the DetalheEspecPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar color="danger">\n\n    <ion-title>{{ct.nome}}</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content>\n\n\n\n<div align="center" class="blocoimg">\n\n    <img class="imgespec" src="http://camaradecondeuba.ba.gov.br/uploads/funcionarios/7/{{ct.img}}"/>\n\n</div>\n\n<div align="center" class="detalhe">\n\n  <div class="nome-perfil" > {{ct.nome}}</div>\n\n  <div class="email-perfil" >  {{ct.cargo}}</div>\n\n\n\n</div>\n\n\n\n<ion-row class="iconsaction">\n\n  <ion-col>\n\n      <a href="tel:{{ct.telefone}}" target="_self"> <img class="imgespec" src="assets/telephone.png"/></a>\n\n\n\n\n\n  </ion-col>\n\n  <ion-col>\n\n      <a href="mailto:{{ct.email}}" target="_self"> <img class="imgespec" src="assets/sendmail.png"/></a>\n\n\n\n  </ion-col>\n\n  <ion-col>\n\n  <img class="imgespec" src="assets/map.png"/>\n\n  </ion-col>\n\n\n\n</ion-row>\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\detalhe-espec\detalhe-espec.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["r" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* NavParams */]])
+], DetalheEspecPage);
+
+//# sourceMappingURL=detalhe-espec.js.map
+
+/***/ }),
+
+/***/ 65:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2164,7 +2367,11 @@ var DetalheNotPage = (function () {
 }());
 DetalheNotPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+<<<<<<< HEAD
         selector: 'page-detalhe-not',template:/*ion-inline-start:"C:\Users\Thiago\Documents\camaracondeuba\src\pages\detalhe-not\detalhe-not.html"*/'<!--\n  Generated template for the DetalheNotPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar color="primary">\n    <ion-title>{{ct.titulo}}</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-card>\n\n  <ion-item>\n    <ion-avatar item-start>\n      <img src="http://www.inebmed.com.br/{{ct.imgtumb}}">\n    </ion-avatar>\n    <h2 text-wrap>{{ct.titulo}}</h2>\n    <p>  {{ct.subtitulo}}</p>\n  </ion-item>\n\n  <img src="http://www.inebmed.com.br/{{ct.imgtumb}}">\n\n  <ion-card-content>\n  <div style="text-align: justify;" [innerHTML]="ct.conteudo"></div>\n  </ion-card-content>\n\n  <ion-row>\n    <ion-col>\n      <button ion-button icon-left clear small>\n        <ion-icon name="thumbs-up"></ion-icon>\n        <div>12 Likes</div>\n      </button>\n    </ion-col>\n    <ion-col>\n      <button ion-button icon-left clear small>\n        <ion-icon name="share"></ion-icon>\n        <div>Compartilhar</div>\n      </button>\n    </ion-col>\n    <ion-col center text-center>\n      <ion-note>\n  {{ct.data}}\n      </ion-note>\n    </ion-col>\n  </ion-row>\n\n</ion-card>\n</ion-content>\n'/*ion-inline-end:"C:\Users\Thiago\Documents\camaracondeuba\src\pages\detalhe-not\detalhe-not.html"*/,
+=======
+        selector: 'page-detalhe-not',template:/*ion-inline-start:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\detalhe-not\detalhe-not.html"*/'<!--\n\n  Generated template for the DetalheNotPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar color="danger">\n\n    <ion-title>{{ct.titulo}}</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <ion-card>\n\n\n\n  <ion-item>\n\n    <ion-avatar item-start>\n\n      <img src="http://camaradecondeuba.ba.gov.br/uploads/noticias/7/{{ct.img}}">\n\n    </ion-avatar>\n\n    <h2 text-wrap>{{ct.titulo}}</h2>\n\n    <p>  {{ct.subtitulo}}</p>\n\n  </ion-item>\n\n\n\n  <img src="http://camaradecondeuba.ba.gov.br/uploads/noticias/7/{{ct.img}}">\n\n\n\n  <ion-card-content>\n\n  <div style="text-align: justify;" [innerHTML]="ct.conteudo"></div>\n\n  </ion-card-content>\n\n\n\n  <ion-row>\n\n    <ion-col>\n\n      <button ion-button icon-left clear small>\n\n        <ion-icon name="share"></ion-icon>\n\n        <div>Compartilhar</div>\n\n      </button>\n\n    </ion-col>\n\n    <ion-col center text-center>\n\n      <ion-note>\n\n  {{ct.data}}\n\n      </ion-note>\n\n    </ion-col>\n\n  </ion-row>\n\n\n\n</ion-card>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\detalhe-not\detalhe-not.html"*/,
+>>>>>>> c2e28b6532dd7fb29f70ec7c7b56f30a7e2ff0fa
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["r" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* NavParams */]])
 ], DetalheNotPage);
@@ -2173,13 +2380,13 @@ DetalheNotPage = __decorate([
 
 /***/ }),
 
-/***/ 65:
+/***/ 66:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EspecialistasPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__detalhe_espec_detalhe_espec__ = __webpack_require__(128);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_service_service__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__detalhe_espec_detalhe_espec__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_service_service__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(3);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -2233,7 +2440,11 @@ var EspecialistasPage = (function () {
 }());
 EspecialistasPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
+<<<<<<< HEAD
         selector: 'page-especialistas',template:/*ion-inline-start:"C:\Users\Thiago\Documents\camaracondeuba\src\pages\especialistas\especialistas.html"*/'<!--\n  Generated template for the EspecialistasPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n    <ion-navbar color="primary">\n        <ion-title>Especialistas</ion-title>\n      </ion-navbar>\n</ion-header>\n\n<ion-content >\n<div *ngFor="let item of especialistas" (click)="openPage(item)">\n\n\n  <ion-card>\n\n    <ion-item>\n      <ion-avatar item-start>\n  <img src="http://www.inebmed.com.br/{{item.img}}"/>\n      </ion-avatar>\n      <h2> {{item.nome}}</h2>\n      <p> {{item.especialidade}}</p>\n    </ion-item>\n\n  </ion-card>\n  </div>\n</ion-content>\n'/*ion-inline-end:"C:\Users\Thiago\Documents\camaracondeuba\src\pages\especialistas\especialistas.html"*/,
+=======
+        selector: 'page-especialistas',template:/*ion-inline-start:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\especialistas\especialistas.html"*/'<!--\n\n  Generated template for the EspecialistasPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n    <ion-navbar color="primary">\n\n        <ion-title>Especialistas</ion-title>\n\n      </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content >\n\n<div *ngFor="let item of especialistas" (click)="openPage(item)">\n\n\n\n\n\n  <ion-card>\n\n\n\n    <ion-item>\n\n      <ion-avatar item-start>\n\n  <img src="http://www.inebmed.com.br/{{item.img}}"/>\n\n      </ion-avatar>\n\n      <h2> {{item.nome}}</h2>\n\n      <p> {{item.especialidade}}</p>\n\n    </ion-item>\n\n\n\n  </ion-card>\n\n  </div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\especialistas\especialistas.html"*/,
+>>>>>>> c2e28b6532dd7fb29f70ec7c7b56f30a7e2ff0fa
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["n" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_1__providers_service_service__["a" /* ServiceProvider */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["r" /* NavController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["s" /* NavParams */]])
 ], EspecialistasPage);
@@ -2242,13 +2453,13 @@ EspecialistasPage = __decorate([
 
 /***/ }),
 
-/***/ 66:
+/***/ 67:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GetUnidadesPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__unidades_unidades__ = __webpack_require__(67);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_service_service__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__unidades_unidades__ = __webpack_require__(68);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_service_service__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(3);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -2303,7 +2514,11 @@ var GetUnidadesPage = (function () {
 }());
 GetUnidadesPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
+<<<<<<< HEAD
         selector: 'page-get-unidades',template:/*ion-inline-start:"C:\Users\Thiago\Documents\camaracondeuba\src\pages\get-unidades\get-unidades.html"*/'<!--\n  Generated template for the GetUnidadesPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar color="primary">\n    <ion-title>Unidades</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n    <ion-list>\n        <button *ngFor="let p of unidades" ion-item (click)="openPage(p)"><ion-icon name="pin"> {{p.cidade}}</ion-icon></button>\n      </ion-list>\n</ion-content>\n'/*ion-inline-end:"C:\Users\Thiago\Documents\camaracondeuba\src\pages\get-unidades\get-unidades.html"*/,
+=======
+        selector: 'page-get-unidades',template:/*ion-inline-start:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\get-unidades\get-unidades.html"*/'<!--\n\n  Generated template for the GetUnidadesPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar color="primary">\n\n    <ion-title>Unidades</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n\n\n<ion-content padding>\n\n    <ion-list>\n\n        <button *ngFor="let p of unidades" ion-item (click)="openPage(p)"><ion-icon name="pin"> {{p.cidade}}</ion-icon></button>\n\n      </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\get-unidades\get-unidades.html"*/,
+>>>>>>> c2e28b6532dd7fb29f70ec7c7b56f30a7e2ff0fa
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["n" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_1__providers_service_service__["a" /* ServiceProvider */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["r" /* NavController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["s" /* NavParams */]])
 ], GetUnidadesPage);
@@ -2312,7 +2527,7 @@ GetUnidadesPage = __decorate([
 
 /***/ }),
 
-/***/ 67:
+/***/ 68:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2322,7 +2537,7 @@ GetUnidadesPage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_social_sharing__ = __webpack_require__(195);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__get_unidades_get_unidades__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__get_unidades_get_unidades__ = __webpack_require__(67);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2407,7 +2622,11 @@ var UnidadesPage = (function () {
 }());
 UnidadesPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
+<<<<<<< HEAD
         selector: 'page-unidades',template:/*ion-inline-start:"C:\Users\Thiago\Documents\camaracondeuba\src\pages\unidades\unidades.html"*/'<ion-header>\n  <ion-toolbar color="primary">\n    <ion-buttons start>\n      <button (click)="goBack()" ion-button icon-only>\n        <ion-icon name="ios-arrow-back-outline"></ion-icon>\n      </button>\n    </ion-buttons>\n\n    <ion-title>Unidades</ion-title>\n\n\n\n  </ion-toolbar>\n</ion-header>\n\n<ion-content class="home">\n  <span id="teste"></span>\n  <div class="imagemlogo"><img src="assets/menu/logo2.png" alt=""></div>\n  <div class="unidades">\n\n\n    <ion-row>\n      <ion-col>\n        <div  (click)="openMap(item)"><img src="assets/placeholders.png" alt="">Como chegar</div>\n      </ion-col>\n      <ion-col>\n        <div ><a href="tel:{{item.telefone}}" target="_self"><img src="assets/phone.png" alt=""></a>Ligar agora</div>\n      </ion-col>\n      <ion-col>\n        <div  (click)="openExameList(item)"> <img src="assets/home.png"  alt="">Endereço</div>\n      </ion-col>\n    </ion-row>\n\n\n\n\n    <ion-row>\n      <ion-col col-4>\n<a href="mailto:{{item.email}}"  target="_self"><img src="assets/mail.png" alt=""></a>Email\n      </ion-col>\n      <ion-col col-4>\n        <div  (click)="teste()"><img src="assets/whatsapp.png" alt="">Atendimento Online</div>\n      </ion-col>\n      <ion-col col-4>\n\n        <div  (click)="share()"><img src="assets/share.png" alt="">Compartilhar</div>\n      </ion-col>\n    </ion-row>\n\n  </div>\n\n\n\n\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\Thiago\Documents\camaracondeuba\src\pages\unidades\unidades.html"*/,
+=======
+        selector: 'page-unidades',template:/*ion-inline-start:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\unidades\unidades.html"*/'<ion-header>\n\n  <ion-toolbar color="primary">\n\n    <ion-buttons start>\n\n      <button (click)="goBack()" ion-button icon-only>\n\n        <ion-icon name="ios-arrow-back-outline"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n\n\n    <ion-title>Unidades</ion-title>\n\n\n\n\n\n\n\n  </ion-toolbar>\n\n</ion-header>\n\n\n\n<ion-content class="home">\n\n  <span id="teste"></span>\n\n  <div class="imagemlogo"><img src="assets/menu/logo2.png" alt=""></div>\n\n  <div class="unidades">\n\n\n\n\n\n    <ion-row>\n\n      <ion-col>\n\n        <div  (click)="openMap(item)"><img src="assets/placeholders.png" alt="">Como chegar</div>\n\n      </ion-col>\n\n      <ion-col>\n\n        <div ><a href="tel:{{item.telefone}}" target="_self"><img src="assets/phone.png" alt=""></a>Ligar agora</div>\n\n      </ion-col>\n\n      <ion-col>\n\n        <div  (click)="openExameList(item)"> <img src="assets/home.png"  alt="">Endereço</div>\n\n      </ion-col>\n\n    </ion-row>\n\n\n\n\n\n\n\n\n\n    <ion-row>\n\n      <ion-col col-4>\n\n<a href="mailto:{{item.email}}"  target="_self"><img src="assets/mail.png" alt=""></a>Email\n\n      </ion-col>\n\n      <ion-col col-4>\n\n        <div  (click)="teste()"><img src="assets/whatsapp.png" alt="">Atendimento Online</div>\n\n      </ion-col>\n\n      <ion-col col-4>\n\n\n\n        <div  (click)="share()"><img src="assets/share.png" alt="">Compartilhar</div>\n\n      </ion-col>\n\n    </ion-row>\n\n\n\n  </div>\n\n\n\n\n\n\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\unidades\unidades.html"*/,
+>>>>>>> c2e28b6532dd7fb29f70ec7c7b56f30a7e2ff0fa
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["y" /* ViewController */], __WEBPACK_IMPORTED_MODULE_4__ionic_native_social_sharing__["a" /* SocialSharing */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["n" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["r" /* NavController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["s" /* NavParams */]])
 ], UnidadesPage);
@@ -2416,13 +2635,13 @@ UnidadesPage = __decorate([
 
 /***/ }),
 
-/***/ 68:
+/***/ 69:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_http__ = __webpack_require__(76);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_service_service__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_http__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_service_service__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__home_home__ = __webpack_require__(48);
@@ -2521,7 +2740,11 @@ var LoginPage = (function () {
 }());
 LoginPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
+<<<<<<< HEAD
         selector: 'page-login',template:/*ion-inline-start:"C:\Users\Thiago\Documents\camaracondeuba\src\pages\login\login.html"*/'\n\n\n\n\n\n<ion-content class="login" >\n\n  <ion-icon (click)="close()"  class="closeicons" name="close-circle"></ion-icon>\n\n    <div align="center" class="">\n\n        <img class="logologin" src="assets/menu/logo2.png" alt="">\n\n      </div>\n\n\n\n\n\n  <div align="center" class="boxinput">\n\n    <ion-input class="imput" type="text" [(ngModel)]="userData.login" placeholder="Login" name="login"  required></ion-input>\n\n    <ion-input class="imput" type="password" [(ngModel)]="userData.senha" placeholder="Senha" name="senha"  required></ion-input>\n\n  <button class="entrar" (click)="lg(userData)" ion-button color="secundary" [disabled]="!userData.login ||!userData.senha" >ENTRAR</button>\n\n  </div>\n\n\n\n\n\n\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Thiago\Documents\camaracondeuba\src\pages\login\login.html"*/,
+=======
+        selector: 'page-login',template:/*ion-inline-start:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\login\login.html"*/'\n\n\n\n\n\n<ion-content class="login" >\n\n  <ion-icon (click)="close()"  class="closeicons" name="close-circle"></ion-icon>\n\n    <div align="center" class="">\n\n        <img class="logologin" src="assets/menu/logo2.png" alt="">\n\n      </div>\n\n\n\n\n\n  <div align="center" class="boxinput">\n\n    <ion-input class="imput" type="text" [(ngModel)]="userData.login" placeholder="Login" name="login"  required></ion-input>\n\n    <ion-input class="imput" type="password" [(ngModel)]="userData.senha" placeholder="Senha" name="senha"  required></ion-input>\n\n  <button class="entrar" (click)="lg(userData)" ion-button color="secundary" [disabled]="!userData.login ||!userData.senha" >ENTRAR</button>\n\n  </div>\n\n\n\n\n\n\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\login\login.html"*/,
+>>>>>>> c2e28b6532dd7fb29f70ec7c7b56f30a7e2ff0fa
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["y" /* ViewController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["r" /* NavController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["n" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["s" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["w" /* ToastController */], __WEBPACK_IMPORTED_MODULE_1__providers_service_service__["a" /* ServiceProvider */], __WEBPACK_IMPORTED_MODULE_0__angular_http__["b" /* Http */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["p" /* ModalController */]])
 ], LoginPage);
@@ -2530,14 +2753,16 @@ LoginPage = __decorate([
 
 /***/ }),
 
-/***/ 69:
+/***/ 70:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PerfilPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__home_home__ = __webpack_require__(48);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__detalhe_espec_detalhe_espec__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_service_service__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(3);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2550,6 +2775,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 /**
  * Generated class for the PerfilPage page.
  *
@@ -2557,7 +2784,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var PerfilPage = (function () {
-    function PerfilPage(loadingCtrl, navCtrl, navParams) {
+    function PerfilPage(service, loadingCtrl, navCtrl, navParams) {
+        this.service = service;
         this.loadingCtrl = loadingCtrl;
         this.navCtrl = navCtrl;
         this.navParams = navParams;
@@ -2566,35 +2794,54 @@ var PerfilPage = (function () {
             duration: 1000
         });
         loader.present();
-        this.dadosUser = JSON.parse(localStorage.getItem('userData'));
+        this.getVereadores();
     }
     PerfilPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad PerfilPage');
     };
+    PerfilPage.prototype.getVereadores = function () {
+        var _this = this;
+        this.service.getVereadores().subscribe(function (data) {
+            _this.vereadores = data;
+            console.log(data);
+        }, function (erro) {
+            console.log(erro);
+        });
+    };
+    PerfilPage.prototype.openPage = function (item) {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_0__detalhe_espec_detalhe_espec__["a" /* DetalheEspecPage */], {
+            ct: item
+        });
+    };
     PerfilPage.prototype.sair = function () {
         localStorage.removeItem('userData');
-        this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_0__home_home__["a" /* HomePage */]);
+        this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_2__home_home__["a" /* HomePage */]);
     };
     return PerfilPage;
 }());
 PerfilPage = __decorate([
+<<<<<<< HEAD
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
         selector: 'page-perfil',template:/*ion-inline-start:"C:\Users\Thiago\Documents\camaracondeuba\src\pages\perfil\perfil.html"*/'<!--\n  Generated template for the PerfilPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar color="primary">\n    <ion-title>Perfil</ion-title>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content class="perfil">\n  <ion-icon class="iconoption" name="options"></ion-icon>\n\n    <div class="bloco1">\n      <img src="http://www.inebmed.com.br/{{dadosUser.imgtumb}}">\n\n  </div>\n  <div class="bloco2">\n  <div class="nome-perfil" >{{dadosUser.nome}}</div>\n  <div class="email-perfil" >   {{dadosUser.email}}</div>\n<ion-item-group>\n  <ion-item-divider color="light">Dados Pessoais</ion-item-divider>\n  <ion-item><b>Endereço: </b> {{dadosUser.endereco}}</ion-item>\n  <ion-item><b>Cidade: </b> {{dadosUser.cidade}}</ion-item>\n  <ion-item><b>Rg: </b> {{dadosUser.rg}}</ion-item>\n  <ion-item><b>Cpf: </b> {{dadosUser.cpf}}</ion-item>\n  <ion-item><b>Data Nasc.: </b> {{dadosUser.datanasci}}</ion-item>\n</ion-item-group>\n<ion-row class="iconssocial">\n  <ion-col>\n      <ion-icon name="logo-facebook"></ion-icon>\n  </ion-col>\n  <ion-col>\n      <ion-icon name="logo-instagram"></ion-icon>\n  </ion-col>\n  <ion-col>\n      <ion-icon name="share"></ion-icon>\n  </ion-col>\n  <ion-col>\n      <ion-icon name="star"></ion-icon>\n  </ion-col>\n</ion-row>\n\n  <button class="imput" ion-button (click)="sair()">Sair</button>\n  </div>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\Thiago\Documents\camaracondeuba\src\pages\perfil\perfil.html"*/,
+=======
+    Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["Component"])({
+        selector: 'page-perfil',template:/*ion-inline-start:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\perfil\perfil.html"*/'<!--\n\n  Generated template for the PerfilPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar color="danger">\n\n    <ion-title>Vereadores</ion-title>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n\n\n<ion-content >\n\n    <div *ngFor="let item of vereadores" (click)="openPage(item)">\n\n      <ion-card>\n\n    \n\n        <ion-item>\n\n          <ion-avatar item-start>\n\n              <img src="http://camaradecondeuba.ba.gov.br/uploads/funcionarios/7/{{item.img}}">\n\n          </ion-avatar>\n\n          <h2> {{item.nome}}</h2>\n\n          <p> {{item.cargo}}</p>\n\n        </ion-item>\n\n    \n\n      </ion-card>\n\n      </div>\n\n    </ion-content>'/*ion-inline-end:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\perfil\perfil.html"*/,
+>>>>>>> c2e28b6532dd7fb29f70ec7c7b56f30a7e2ff0fa
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["n" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["r" /* NavController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["s" /* NavParams */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__providers_service_service__["a" /* ServiceProvider */], __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["n" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["r" /* NavController */], __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["s" /* NavParams */]])
 ], PerfilPage);
 
 //# sourceMappingURL=perfil.js.map
 
 /***/ }),
 
-/***/ 70:
+/***/ 71:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NoticiasPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__detalhe_not_detalhe_not__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_service_service__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__detalhe_not_detalhe_not__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_service_service__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(3);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -2645,7 +2892,11 @@ var NoticiasPage = (function () {
 }());
 NoticiasPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
+<<<<<<< HEAD
         selector: 'page-noticias',template:/*ion-inline-start:"C:\Users\Thiago\Documents\camaracondeuba\src\pages\noticias\noticias.html"*/'<!--\n\n  Generated template for the NoticiasPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n        <ion-navbar color="primary">\n\n            <ion-title>Notícias</ion-title>\n\n          </ion-navbar>\n\n    </ion-header>\n\n\n\n\n\n\n\n\n\n<ion-content  class="home">\n\n<div class="" *ngIf="noticias && noticias.length">\n\n\n\n\n\n\n\n  <div class="slidepatro">\n\n    <div class="titcat">\n\n      Destaques\n\n    </div>\n\n\n\n<ion-slides *ngIf="noticias && noticias.length" padding paginationType autoplay="3000" loop slidesPerView="3">\n\n<ion-slide (click)="openPage(dest)"  *ngFor="let dest of noticias | slice:0:5; let i=index"  >\n\n            <img src="http://www.inebmed.com.br/{{dest.imgtumb}}"/>\n\n            <p class="titdest">{{dest.titulo |  slice:0:30}}...</p>\n\n</ion-slide>\n\n\n\n\n\n\n\n\n\n</ion-slides>\n\n\n\n</div>\n\n\n\n<div class="titcat">\n\n  Todas notícias\n\n\n\n</div>\n\n<ion-list>\n\n  <ion-item text-wrap (click)="openPage(item)" *ngFor="let item of noticias | slice:5; let i=index">\n\n    <ion-avatar item-start>\n\n      <img class="imgavatar" src="http://www.inebmed.com.br/{{item.imgtumb}}"/>\n\n    </ion-avatar>\n\n    <div class="titulonot">{{item.titulo}}</div>\n\n    <p>{{item.data}}</p>\n\n  </ion-item>\n\n</ion-list>\n\n</div>\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Thiago\Documents\camaracondeuba\src\pages\noticias\noticias.html"*/,
+=======
+        selector: 'page-noticias',template:/*ion-inline-start:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\noticias\noticias.html"*/'<!--\n\n  Generated template for the NoticiasPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n        <ion-navbar color="danger">\n\n            <ion-title>Notícias</ion-title>\n\n          </ion-navbar>\n\n    </ion-header>\n\n\n\n\n\n\n\n\n\n<ion-content  class="home">\n\n<div class="" *ngIf="noticias && noticias.length">\n\n\n\n\n\n\n\n  <div class="slidepatro">\n\n    <div class="titcat">\n\n      Destaques\n\n    </div>\n\n\n\n<ion-slides *ngIf="noticias && noticias.length" padding paginationType autoplay="3000" loop slidesPerView="3">\n\n<ion-slide *ngFor="let dest of noticias | slice:0:5; let i=index"  >\n\n            <img (click)="openPage(dest)"src="http://camaradecondeuba.ba.gov.br/uploads/noticias/7/{{dest.img}}"/>\n\n            <p class="titdest">{{dest.titulo |  slice:0:30}}...</p>\n\n</ion-slide>\n\n\n\n\n\n\n\n\n\n</ion-slides>\n\n\n\n</div>\n\n\n\n<div class="titcat">\n\n  Todas notícias\n\n</div>\n\n<ion-list>\n\n  <ion-item text-wrap (click)="openPage(item)" *ngFor="let item of noticias">\n\n    <ion-avatar item-start>\n\n      <img class="imgavatar" src="http://camaradecondeuba.ba.gov.br/uploads/noticias/7/{{item.img}}"/>\n\n    </ion-avatar>\n\n    <div class="titulonot">{{item.titulo}}</div>\n\n    <p>{{item.data}}</p>\n\n  </ion-item>\n\n</ion-list>\n\n</div>\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\noticias\noticias.html"*/,
+>>>>>>> c2e28b6532dd7fb29f70ec7c7b56f30a7e2ff0fa
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["n" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_1__providers_service_service__["a" /* ServiceProvider */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["r" /* NavController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["s" /* NavParams */]])
 ], NoticiasPage);
@@ -2654,17 +2905,16 @@ NoticiasPage = __decorate([
 
 /***/ }),
 
-/***/ 71:
+/***/ 72:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SaudePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__calendario_calendario__ = __webpack_require__(196);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_service_service__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__chat_chat__ = __webpack_require__(126);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__cal_imc_cal_imc__ = __webpack_require__(197);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ionic_angular__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_service_service__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cal_imc_cal_imc__ = __webpack_require__(197);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(3);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2674,7 +2924,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
 
 
 
@@ -2692,13 +2941,7 @@ var SaudePage = (function () {
         this.loadingCtrl = loadingCtrl;
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.user = JSON.parse(localStorage.getItem('userData'));
-        if (localStorage.getItem('userData')) {
-            this.user2 = true;
-        }
-        else {
-            this.user2 = false;
-        }
+        this.getTvCamara();
         var loader = this.loadingCtrl.create({
             content: "Aguarde...",
             duration: 1000
@@ -2708,40 +2951,32 @@ var SaudePage = (function () {
     SaudePage.prototype.ionViewDidLoad = function () {
     };
     SaudePage.prototype.imc = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__cal_imc_cal_imc__["a" /* CalImcPage */]);
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__cal_imc_cal_imc__["a" /* CalImcPage */]);
     };
     SaudePage.prototype.horarios = function () {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_0__calendario_calendario__["a" /* CalendarioPage */]);
     };
-    SaudePage.prototype.abrirChat = function () {
+    SaudePage.prototype.getTvCamara = function () {
         var _this = this;
-        this.chat = [
-            {
-                user1: this.user[0].id_usuario,
-                user2: 4
-            }
-        ];
-        this.service.newChat(this.chat[0]).then(function (result) {
-            _this.chat = result;
-            if (_this.chat.mensage == 1) {
-                console.log("sucesso");
-                _this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__chat_chat__["a" /* ChatPage */], {
-                    users: _this.chat
-                });
-            }
-            else {
-                console.log("erro");
-            }
-        }, function (error) {
+        this.service.getTvCamara().subscribe(function (data) {
+            _this.videos = data;
+            console.log(data);
+        }, function (erro) {
+            console.log(erro);
         });
     };
     return SaudePage;
 }());
 SaudePage = __decorate([
+<<<<<<< HEAD
     Object(__WEBPACK_IMPORTED_MODULE_4__angular_core__["Component"])({
         selector: 'page-saude',template:/*ion-inline-start:"C:\Users\Thiago\Documents\camaracondeuba\src\pages\saude\saude.html"*/'<!--\n\n  Generated template for the SaudePage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar color="primary">\n\n    <ion-title>+Saude</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <ion-list>\n\n    <button ion-item (click)="imc()"> <ion-icon name="construct"> Calculo IMC</ion-icon></button>\n\n    <div *ngIf="user2" class="">\n\n     </div>\n\n   \n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Thiago\Documents\camaracondeuba\src\pages\saude\saude.html"*/,
+=======
+    Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["Component"])({
+        selector: 'page-saude',template:/*ion-inline-start:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\saude\saude.html"*/'<!--\n\n  Generated template for the SaudePage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar color="danger">\n\n    <ion-title>TV CAMARA</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <div *ngFor="let item of videos">\n\n      {{item.link_video}}\n\n  </div>\n\n   \n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\gian_\Desktop\projeto\camcond\src\pages\saude\saude.html"*/,
+>>>>>>> c2e28b6532dd7fb29f70ec7c7b56f30a7e2ff0fa
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__providers_service_service__["a" /* ServiceProvider */], __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["n" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["r" /* NavController */], __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["s" /* NavParams */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__providers_service_service__["a" /* ServiceProvider */], __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["n" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["r" /* NavController */], __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["s" /* NavParams */]])
 ], SaudePage);
 
 //# sourceMappingURL=saude.js.map

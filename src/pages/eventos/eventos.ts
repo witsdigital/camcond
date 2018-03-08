@@ -18,7 +18,7 @@ import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-an
 export class EventosPage {
 
 
-  eventos: any  = this.getEventos();
+  eventos: any  = this.getGaleria();
 
   constructor(public loadingCtrl: LoadingController, public service: ServiceProvider, public navCtrl: NavController, public navParams: NavParams) {
     let loader = this.loadingCtrl.create({
@@ -32,8 +32,8 @@ export class EventosPage {
     
   }
 
-  getEventos(){
-    this.service.getEventos().subscribe((data)=>{
+  getGaleria(){
+    this.service.getGaleria().subscribe((data)=>{
       this.eventos = data;
     },(erro)=>{
       console.log(erro);
