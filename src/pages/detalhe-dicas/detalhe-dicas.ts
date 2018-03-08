@@ -46,4 +46,11 @@ export class DetalheDicasPage  {
       console.log(erro);
     });
   }
+
+
+  openURL(url) {
+    InAppBrowser.open(url,'_system','location=yes');
+}
+
+
 }

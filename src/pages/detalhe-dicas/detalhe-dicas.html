@@ -16,6 +16,6 @@
 <ion-content padding>
   <h3>{{ct.titulo}}</h3>
   <h4>{{ct.objeto}}</h4>
-  <h4>{{dados}}</h4>
-  <ion-buttons>Consultar</ion-buttons>
+  <h4 *ngFor="let p of dados">{{p.arquivo}}</h4>
 </ion-content>
+
